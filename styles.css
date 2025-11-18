@@ -941,6 +941,12 @@ body {
 /* Services Overview */
 .services-overview, .services-detail {
     padding: 4rem 0;
+    background: #1e3a8a; /* Royal blue background */
+    color: white;
+}
+
+.services-overview .section-subtitle {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .services-overview h2, .services-detail h2 {
@@ -964,11 +970,15 @@ body {
 }
 
 .service-card {
-    background: var(--bg-white);
+    background: white;
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card.large {
+    background: white;
 }
 
 .service-card:hover {
@@ -4240,6 +4250,12 @@ body {
 
 .projects-showcase {
     padding: 4rem 0;
+    background: #065f46; /* Deep green background */
+    color: white;
+}
+
+.projects-showcase .section-subtitle {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .projects-grid-main {
@@ -4255,6 +4271,10 @@ body {
     border-radius: 12px;
     padding: 2rem;
     transition: all 0.3s;
+}
+
+.project-showcase-card:not(.featured) {
+    background: white;
 }
 
 .project-showcase-card:hover {
@@ -6263,12 +6283,12 @@ section[id*="service"] h2,
 .service-capabilities h2,
 .service-tech-stack h2 {
     color: #ffffff !important; /* White text */
-    background: #2563eb !important; /* Primary Blue */
+    background: #ec4899 !important; /* Hot Pink title */
     padding: 1rem 2rem !important;
     border-radius: 12px !important;
     display: inline-block !important;
     margin: 0 auto 1.5rem auto !important;
-    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2) !important;
+    box-shadow: 0 4px 6px rgba(236, 72, 153, 0.3) !important;
 }
 
 /* Projects Section - Green */
@@ -6278,12 +6298,12 @@ section[id*="service"] h2,
 #projects h2,
 section[id*="project"] h2 {
     color: #ffffff !important; /* White text */
-    background: #10b981 !important; /* Success Green */
+    background: #f59e0b !important; /* Amber/Orange title */
     padding: 1rem 2rem !important;
     border-radius: 12px !important;
     display: inline-block !important;
     margin: 0 auto 1.5rem auto !important;
-    box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2) !important;
+    box-shadow: 0 4px 6px rgba(245, 158, 11, 0.3) !important;
 }
 
 /* Pricing Section - Orange/Amber */
@@ -6296,12 +6316,25 @@ section[id*="project"] h2 {
 #pricing h2,
 section[id*="pricing"] h2 {
     color: #ffffff !important; /* White text */
-    background: #f59e0b !important; /* Warning Orange */
+    background: #8b5cf6 !important; /* Purple title */
     padding: 1rem 2rem !important;
     border-radius: 12px !important;
     display: inline-block !important;
     margin: 0 auto 1.5rem auto !important;
-    box-shadow: 0 4px 6px rgba(245, 158, 11, 0.2) !important;
+    box-shadow: 0 4px 6px rgba(139, 92, 246, 0.3) !important;
+}
+
+.pricing-section {
+    background: #d97706 !important; /* Deep orange/amber background */
+    color: white;
+}
+
+.pricing-section p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.pricing-section h3 {
+    color: white;
 }
 
 /* Contact Section - Purple/Indigo */
@@ -6312,12 +6345,50 @@ section[id*="pricing"] h2 {
 section[id*="contact"] h2,
 .section-title {
     color: #ffffff !important; /* White text */
-    background: #6366f1 !important; /* Indigo */
+    background: #ec4899 !important; /* Hot Pink title */
     padding: 1rem 2rem !important;
     border-radius: 12px !important;
     display: inline-block !important;
     margin: 0 auto 1.5rem auto !important;
-    box-shadow: 0 4px 6px rgba(99, 102, 241, 0.2) !important;
+    box-shadow: 0 4px 6px rgba(236, 72, 153, 0.3) !important;
+}
+
+.contact {
+    background: #4338ca !important; /* Deep indigo background */
+    color: white;
+}
+
+.contact-subtitle {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.contact-info h3,
+.contact-form h3 {
+    color: white;
+}
+
+.contact-item {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-item strong {
+    color: white;
+}
+
+.contact-item a {
+    color: #fbbf24; /* Amber link color */
+}
+
+.contact-form {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    background: white;
+    color: var(--text-dark);
 }
 
 /* About Section - Teal */
@@ -6342,12 +6413,21 @@ section[id*="about"] h2 {
 #booking h2,
 section[id*="booking"] h2 {
     color: #ffffff !important; /* White text */
-    background: #ec4899 !important; /* Pink */
+    background: #1e3a8a !important; /* Royal Blue title */
     padding: 1rem 2rem !important;
     border-radius: 12px !important;
     display: inline-block !important;
     margin-bottom: 1.5rem !important;
-    box-shadow: 0 4px 6px rgba(236, 72, 153, 0.2) !important;
+    box-shadow: 0 4px 6px rgba(30, 58, 138, 0.3) !important;
+}
+
+.cta-section {
+    background: #ec4899 !important; /* Hot Pink background */
+    color: white;
+}
+
+.cta-section p {
+    color: rgba(255, 255, 255, 0.95);
 }
 
 /* Case Studies - Purple */
