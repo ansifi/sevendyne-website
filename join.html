@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Team - Developer Careers | Sevendyne</title>
+    <meta name="description" content="Join Sevendyne as a developer. Submit your resume and become part of our global development team working on exciting projects across various technologies.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html" style="text-decoration: none; color: inherit;">Sevendyne</a></h1>
+                <p class="tagline">Sevendyne Consultancy Services LLP</p>
+            </div>
+            <nav class="nav">
+                <a href="projects.html">Projects Worked</a>
+                <a href="about.html">About Us</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#booking">Schedule</a>
+                <a href="join.html">Join Us</a>
+                <a class="featured-link" href="contact.html">Request Support</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Join Our Development Team</h1>
+            <p>We're always looking for talented developers to join our global team. Submit your resume and let's build amazing things together.</p>
+        </div>
+    </section>
+
+    <!-- Join Section -->
+    <section class="contact-section" style="padding: 4rem 0;">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <h2 style="color: #14b8a6; margin-bottom: 1rem;">Developer Career Opportunities</h2>
+                    <p style="color: #64748b; font-size: 1.1rem;">We work with developers across various technologies and experience levels. Whether you're a fresh graduate or an experienced professional, we'd love to hear from you.</p>
+                </div>
+
+                <!-- Why Join Section -->
+                <div style="background: #f8fafc; padding: 2rem; border-radius: 12px; margin-bottom: 3rem;">
+                    <h3 style="color: #1e293b; margin-bottom: 1.5rem; font-size: 1.5rem;">Why Join Sevendyne?</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div>
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🌍</div>
+                            <h4 style="color: #1e293b; margin-bottom: 0.5rem;">Global Projects</h4>
+                            <p style="color: #64748b; font-size: 0.95rem;">Work on projects for clients across UK, Germany, Singapore, Malaysia, USA, and India.</p>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">💻</div>
+                            <h4 style="color: #1e293b; margin-bottom: 0.5rem;">Modern Tech Stack</h4>
+                            <p style="color: #64748b; font-size: 0.95rem;">Work with React, Laravel, Django, React Native, Node.js, Python, C++/Qt, and more.</p>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📈</div>
+                            <h4 style="color: #1e293b; margin-bottom: 0.5rem;">Career Growth</h4>
+                            <p style="color: #64748b; font-size: 0.95rem;">13+ years of experience. Learn from experienced developers and grow your skills.</p>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🤝</div>
+                            <h4 style="color: #1e293b; margin-bottom: 0.5rem;">Flexible Work</h4>
+                            <p style="color: #64748b; font-size: 0.95rem;">Remote-friendly work environment with flexible engagement models.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Application Form -->
+                <div class="contact-form-container">
+                    <h2 style="color: #14b8a6; margin-bottom: 1rem;">Submit Your Application</h2>
+                    <p style="color: #64748b; margin-bottom: 2rem;">Fill out the form below and attach your resume. We'll review your application and get back to you soon.</p>
+                    
+                    <form id="joinForm" class="contact-form" action="https://formspree.io/f/mldoabko" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="_subject" value="New Developer Application - Sevendyne">
+                        <input type="hidden" name="_cc" value="hr@sevendyne.com">
+                        
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required placeholder="John Doe">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="_replyto" required placeholder="john.doe@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+91 XXXXX XXXXX">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" name="location" placeholder="City, Country">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="experience">Years of Experience *</label>
+                            <select id="experience" name="experience" required>
+                                <option value="">Select experience level...</option>
+                                <option value="fresher">Fresher (0-1 years)</option>
+                                <option value="junior">Junior (1-3 years)</option>
+                                <option value="mid">Mid-level (3-5 years)</option>
+                                <option value="senior">Senior (5-8 years)</option>
+                                <option value="lead">Lead/Architect (8+ years)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="primarySkills">Primary Skills *</label>
+                            <input type="text" id="primarySkills" name="primarySkills" required placeholder="e.g., React, Python, Laravel, Node.js">
+                            <small style="color: #64748b; font-size: 0.875rem;">List your main programming languages and frameworks</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="secondarySkills">Secondary Skills</label>
+                            <input type="text" id="secondarySkills" name="secondarySkills" placeholder="e.g., AWS, Docker, PostgreSQL, MongoDB">
+                            <small style="color: #64748b; font-size: 0.875rem;">Additional technologies you're familiar with</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="portfolio">Portfolio / GitHub Profile</label>
+                            <input type="url" id="portfolio" name="portfolio" placeholder="https://github.com/yourusername or https://yourportfolio.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="linkedin">LinkedIn Profile</label>
+                            <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="availability">Availability</label>
+                            <select id="availability" name="availability">
+                                <option value="">Select availability...</option>
+                                <option value="full-time">Full-time</option>
+                                <option value="part-time">Part-time</option>
+                                <option value="contract">Contract/Freelance</option>
+                                <option value="flexible">Flexible</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="resume">Resume/CV *</label>
+                            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+                            <small style="color: #64748b; font-size: 0.875rem;">Accepted formats: PDF, DOC, DOCX (Max 5MB)</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="coverLetter">Cover Letter / Additional Information</label>
+                            <textarea id="coverLetter" name="coverLetter" rows="5" placeholder="Tell us about yourself, why you want to join Sevendyne, and what you can bring to the team..."></textarea>
+                        </div>
+
+                        <div class="form-group" style="display: flex; align-items: start; gap: 0.5rem;">
+                            <input type="checkbox" id="consent" name="consent" required style="margin-top: 0.25rem;">
+                            <label for="consent" style="font-size: 0.9rem; color: #64748b;">
+                                I consent to Sevendyne processing my personal data for recruitment purposes. *
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-submit" style="width: 100%; background: #14b8a6;">Submit Application</button>
+                        
+                        <div id="formMessage" class="form-message"></div>
+                    </form>
+                </div>
+
+                <!-- Additional Info -->
+                <div style="margin-top: 3rem; padding: 2rem; background: #f0fdf4; border-radius: 12px; border: 1px solid #10b981;">
+                    <h3 style="color: #1e293b; margin-bottom: 1rem;">What Happens Next?</h3>
+                    <ol style="color: #64748b; line-height: 1.8; padding-left: 1.5rem;">
+                        <li><strong>Application Review:</strong> Our team will review your resume and application within 3-5 business days.</li>
+                        <li><strong>Initial Screening:</strong> If your profile matches our requirements, we'll reach out for an initial conversation.</li>
+                        <li><strong>Technical Assessment:</strong> Depending on the role, you may be asked to complete a technical assessment or coding challenge.</li>
+                        <li><strong>Interview:</strong> Successful candidates will be invited for an interview with our team.</li>
+                        <li><strong>Decision:</strong> We'll notify you of our decision and discuss next steps if selected.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Have Questions?</h2>
+            <p>If you have any questions about working with Sevendyne or the application process, feel free to reach out.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn-primary-white">Contact Us</a>
+                <a href="about.html" class="btn-secondary-white">Learn More About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Sevendyne</h4>
+                    <p>Global technical support, engineering pods, and DevOps services backed by Sevendyne Consultancy Services LLP.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html#services">Support Tracks</a></li>
+                        <li><a href="index.html#projects">Project Highlights</a></li>
+                        <li><a href="join.html">Join Our Team</a></li>
+                        <li><a href="contact.html">Request Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="mailto:hr@sevendyne.com">hr@sevendyne.com</a></li>
+                        <li><a href="https://calendly.com/sevendyne/30min" target="_blank" rel="noopener">Book on Calendly</a></li>
+                        <li><a href="https://wa.me/919544139564" target="_blank" rel="noopener">WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sevendyne Consultancy Services LLP. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Handle join form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const joinForm = document.getElementById('joinForm');
+            const formMessage = document.getElementById('formMessage');
+
+            if (joinForm) {
+                joinForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const formData = new FormData(joinForm);
+                    const submitButton = joinForm.querySelector('button[type="submit"]');
+                    
+                    // Disable submit button
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Submitting...';
+                    formMessage.innerHTML = '';
+                    
+                    // Submit to Formspree
+                    fetch(joinForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            formMessage.innerHTML = '<div class="success-message" style="background: #d1fae5; color: #065f46; padding: 1rem; border-radius: 8px; margin-top: 1rem;"><strong>✓ Thank you!</strong> Your application has been submitted successfully. We\'ll review your resume and get back to you soon.</div>';
+                            joinForm.reset();
+                        } else {
+                            return response.json().then(data => {
+                                if (data.errors) {
+                                    formMessage.innerHTML = '<div class="error-message" style="background: #fee2e2; color: #991b1b; padding: 1rem; border-radius: 8px; margin-top: 1rem;"><strong>Error:</strong> ' + data.errors.map(error => error.message).join(', ') + '</div>';
+                                } else {
+                                    throw new Error('Form submission failed');
+                                }
+                            });
+                        }
+                    })
+                    .catch(error => {
+                        formMessage.innerHTML = '<div class="error-message" style="background: #fee2e2; color: #991b1b; padding: 1rem; border-radius: 8px; margin-top: 1rem;"><strong>Error:</strong> There was a problem submitting your application. Please try again or email us directly at <a href="mailto:hr@sevendyne.com" style="color: #991b1b; text-decoration: underline;">hr@sevendyne.com</a></div>';
+                    })
+                    .finally(() => {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Submit Application';
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
