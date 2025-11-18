@@ -78,6 +78,7 @@
                     <form id="joinForm" class="contact-form" action="https://formspree.io/f/mldoabko" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="_subject" value="New Developer Application - Sevendyne">
                         <input type="hidden" name="_cc" value="hr@sevendyne.com">
+                        <input type="hidden" name="_captcha" value="false">
                         
                         <div class="form-group">
                             <label for="fullName">Full Name *</label>
@@ -354,17 +355,22 @@
                         });
                         
                         // Check if it's a network/CORS error - try submitting form naturally as fallback
-                        if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError') || error.name === 'TypeError') {
+                        if (error.message && (error.message.includes('Failed to fetch') || error.message.includes('NetworkError') || error.name === 'TypeError')) {
                             console.log('Network error detected. Attempting natural form submission as fallback...');
                             
+                            // Store the submit handler reference
+                            const submitHandler = arguments.callee;
+                            
                             // Remove the event listener to allow natural submission
-                            joinForm.removeEventListener('submit', arguments.callee);
+                            joinForm.removeEventListener('submit', submitHandler);
                             
                             // Show message that form will submit normally
                             buttonArea.innerHTML = '<div style="background: #fef3c7; border: 2px solid #f59e0b; color: #92400e; padding: 1rem; border-radius: 8px; text-align: center; margin-bottom: 1rem;"><p style="margin: 0; font-size: 0.9rem;">Submitting form... You will be redirected to a confirmation page.</p></div>';
                             
                             // Submit form naturally (will redirect to Formspree thank you page)
-                            joinForm.submit();
+                            setTimeout(() => {
+                                joinForm.submit();
+                            }, 500);
                             return;
                         }
                         
