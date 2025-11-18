@@ -6238,6 +6238,92 @@ body {
     color: var(--text-dark);
 }
 
+/* Section Header Colors - Distinct colors for each section */
+/* Services Section - Blue */
+.services-overview h2,
+.services-detail h2,
+#services h2,
+section[id*="service"] h2,
+.service-intro h2,
+.service-capabilities h2,
+.service-tech-stack h2 {
+    color: #2563eb !important; /* Primary Blue */
+}
+
+/* Projects Section - Green */
+.projects-grid-main h2,
+.projects-section h2,
+.projects-showcase h2,
+#projects h2,
+section[id*="project"] h2 {
+    color: #10b981 !important; /* Success Green */
+}
+
+/* Pricing Section - Orange/Amber */
+.pricing-plans h2,
+.pricing-intro h2,
+.pricing-section h2,
+.intro-content h2,
+.detailed-pricing h2,
+.additional-fees h2,
+#pricing h2,
+section[id*="pricing"] h2 {
+    color: #f59e0b !important; /* Warning Orange */
+}
+
+/* Contact Section - Purple/Indigo */
+.contact h2,
+.contact-form-container h2,
+.contact-info-container h2,
+#contact h2,
+section[id*="contact"] h2,
+.section-title {
+    color: #6366f1 !important; /* Indigo */
+}
+
+/* About Section - Teal */
+.about-content h2,
+.about-section h2,
+.expertise-section h2,
+.why-choose h2,
+#about h2,
+section[id*="about"] h2 {
+    color: #14b8a6 !important; /* Teal */
+}
+
+/* CTA Section - Pink/Rose */
+.cta-section h2,
+.booking-section h2,
+#booking h2,
+section[id*="booking"] h2 {
+    color: #ec4899 !important; /* Pink */
+}
+
+/* Case Studies - Purple */
+.service-case-studies h2,
+.client-success h2,
+.case-studies h2 {
+    color: #8b5cf6 !important; /* Purple */
+}
+
+/* Portfolio - Cyan */
+.portfolio-section h2,
+.portfolio h2 {
+    color: #06b6d4 !important; /* Cyan */
+}
+
+/* Industries - Emerald */
+.industries h2 {
+    color: #059669 !important; /* Emerald */
+}
+
+/* FAQ Section - Slate */
+.contact-faq h2,
+.pricing-faq h2,
+.faq-section h2 {
+    color: #475569 !important; /* Slate */
+}
+
 .contact-subtitle {
     text-align: center;
     color: var(--text-light);
