@@ -613,11 +613,11 @@ const currencyFormats = {
 
 function formatIndianCurrency(value) {
     if (value >= 100000) {
-        return '₹' + (value / 100000).toFixed(1) + 'L';
+        return (value / 100000).toFixed(1) + 'L';
     } else if (value >= 1000) {
-        return '₹' + (value / 1000).toFixed(0) + 'K';
+        return (value / 1000).toFixed(0) + 'K';
     }
-    return '₹' + value.toLocaleString('en-IN');
+    return value.toLocaleString('en-IN');
 }
 
 function formatUSCurrency(value) {
@@ -645,10 +645,6 @@ function formatPrice(value, currency) {
     const symbol = currencySymbols[currency] || '₹';
     const formatter = currencyFormats[currency] || formatIndianCurrency;
     const formatted = formatter(value);
-    // Check if formatter already includes symbol
-    if (formatted.includes('₹') || formatted.includes('$') || formatted.includes('£') || formatted.includes('€') || formatted.includes('¥') || formatted.includes('₽') || formatted.includes('د.إ') || formatted.includes('RM') || formatted.includes('S$')) {
-        return formatted;
-    }
     return symbol + formatted;
 }
 
