@@ -4258,6 +4258,31 @@ body {
     color: rgba(255, 255, 255, 0.9);
 }
 
+.projects-showcase .project-showcase-card {
+    color: #0f172a;
+}
+
+.projects-showcase .project-showcase-card h3 {
+    color: #0f172a;
+}
+
+.projects-showcase .project-showcase-card .project-client,
+.projects-showcase .project-showcase-card .project-description {
+    color: #475569;
+}
+
+.projects-showcase .project-showcase-card .project-badge {
+    color: #0f172a;
+}
+
+.projects-showcase .all-projects-grid .project-card {
+    color: #0f172a;
+}
+
+.projects-showcase .all-projects-grid .project-card p {
+    color: #475569;
+}
+
 .projects-grid-main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -6335,6 +6360,42 @@ section[id*="pricing"] h2 {
 
 .pricing-section h3 {
     color: white;
+}
+
+.pricing-section .pricing-intro-card,
+.pricing-section .pricing-card,
+.pricing-section .add-on-card,
+.pricing-section .pricing-note-card {
+    color: #0f172a;
+    text-align: left;
+}
+
+.pricing-section .pricing-intro-card p,
+.pricing-section .pricing-card p,
+.pricing-section .pricing-note-card p {
+    color: #475569 !important;
+}
+
+.pricing-section .pricing-card ul li {
+    color: #0f172a;
+}
+
+.pricing-section .add-on-section h3,
+.pricing-section .add-on-section p {
+    color: rgba(255, 255, 255, 0.95) !important;
+    text-align: center;
+}
+
+.pricing-section .add-on-card h4 {
+    color: #0f172a;
+}
+
+.pricing-section .add-on-card p {
+    color: #475569;
+}
+
+.pricing-section .pricing-note-card {
+    text-align: center;
 }
 
 /* Contact Section - Purple/Indigo */
