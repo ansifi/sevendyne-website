@@ -258,42 +258,74 @@
                         // Don't set Content-Type - browser will set it with boundary for multipart/form-data
                     })
                     .then(response => {
+                        console.log('Response status:', response.status);
+                        console.log('Response ok:', response.ok);
+                        
                         // Check if response is successful
                         if (response.ok) {
-                            // Success - Replace button with success message
-                            buttonArea.innerHTML = '<div class="success-message-box" style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border: 2px solid #10b981; color: #065f46; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);"><div style="font-size: 3rem; margin-bottom: 1rem;">✓</div><h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem; color: #065f46;">Message Sent Successfully!</h3><p style="margin: 0.5rem 0; font-size: 1.1rem; font-weight: 600;">Your application has been received.</p><p style="margin: 0.5rem 0 0 0; font-size: 0.95rem;">We will review your resume and get back to you within <strong>24 to 48 hours</strong>.</p><p style="margin: 1rem 0 0 0; font-size: 0.9rem; opacity: 0.8;">A confirmation email has been sent to your email address.</p></div>';
-                            
-                            // Also show message below
-                            formMessage.innerHTML = '<div class="success-message" style="background: #d1fae5; color: #065f46; padding: 1rem; border-radius: 8px; margin-top: 1rem; text-align: center;"><strong>✓ Success!</strong> Your application has been submitted. We\'ll review your resume and respond within 24-48 hours.</div>';
-                            
-                            // Reset form
-                            joinForm.reset();
-                            
-                            // Scroll to success message
-                            buttonArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            // Try to parse JSON response
+                            return response.text().then(text => {
+                                console.log('Response text:', text);
+                                try {
+                                    const data = JSON.parse(text);
+                                    console.log('Response data:', data);
+                                    
+                                    // Success - Replace button with success message
+                                    buttonArea.innerHTML = '<div class="success-message-box" style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border: 2px solid #10b981; color: #065f46; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);"><div style="font-size: 3rem; margin-bottom: 1rem;">✓</div><h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem; color: #065f46;">Message Sent Successfully!</h3><p style="margin: 0.5rem 0; font-size: 1.1rem; font-weight: 600;">Your application has been received.</p><p style="margin: 0.5rem 0 0 0; font-size: 0.95rem;">We will review your resume and get back to you within <strong>24 to 48 hours</strong>.</p><p style="margin: 1rem 0 0 0; font-size: 0.9rem; opacity: 0.8;">A confirmation email has been sent to your email address.</p></div>';
+                                    
+                                    // Also show message below
+                                    formMessage.innerHTML = '<div class="success-message" style="background: #d1fae5; color: #065f46; padding: 1rem; border-radius: 8px; margin-top: 1rem; text-align: center;"><strong>✓ Success!</strong> Your application has been submitted. We\'ll review your resume and respond within 24-48 hours.</div>';
+                                    
+                                    // Reset form
+                                    joinForm.reset();
+                                    
+                                    // Scroll to success message
+                                    buttonArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                } catch (e) {
+                                    // If response is not JSON but status is OK, still treat as success
+                                    console.log('Response is not JSON, but status is OK');
+                                    buttonArea.innerHTML = '<div class="success-message-box" style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border: 2px solid #10b981; color: #065f46; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);"><div style="font-size: 3rem; margin-bottom: 1rem;">✓</div><h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem; color: #065f46;">Message Sent Successfully!</h3><p style="margin: 0.5rem 0; font-size: 1.1rem; font-weight: 600;">Your application has been received.</p><p style="margin: 0.5rem 0 0 0; font-size: 0.95rem;">We will review your resume and get back to you within <strong>24 to 48 hours</strong>.</p><p style="margin: 1rem 0 0 0; font-size: 0.9rem; opacity: 0.8;">A confirmation email has been sent to your email address.</p></div>';
+                                    formMessage.innerHTML = '<div class="success-message" style="background: #d1fae5; color: #065f46; padding: 1rem; border-radius: 8px; margin-top: 1rem; text-align: center;"><strong>✓ Success!</strong> Your application has been submitted. We\'ll review your resume and respond within 24-48 hours.</div>';
+                                    joinForm.reset();
+                                    buttonArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                }
+                            });
                         } else {
                             // Handle error response
-                            return response.json().then(data => {
-                                if (data.errors) {
-                                    formMessage.innerHTML = '<div class="error-message" style="background: #fee2e2; color: #991b1b; padding: 1rem; border-radius: 8px; margin-top: 1rem;"><strong>Error:</strong> ' + data.errors.map(error => error.message).join(', ') + '</div>';
-                                    submitButton.disabled = false;
-                                    submitButton.textContent = 'Submit Application';
-                                    submitButton.style.opacity = '1';
-                                } else {
-                                    throw new Error('Form submission failed');
+                            return response.text().then(text => {
+                                console.error('Error response text:', text);
+                                try {
+                                    const data = JSON.parse(text);
+                                    console.error('Error data:', data);
+                                    if (data.errors) {
+                                        const errorMsg = data.errors.map(error => error.message).join(', ');
+                                        formMessage.innerHTML = '<div class="error-message" style="background: #fee2e2; color: #991b1b; padding: 1rem; border-radius: 8px; margin-top: 1rem;"><strong>Error:</strong> ' + errorMsg + '</div>';
+                                        submitButton.disabled = false;
+                                        submitButton.textContent = 'Submit Application';
+                                        submitButton.style.opacity = '1';
+                                        throw new Error(errorMsg);
+                                    } else {
+                                        throw new Error('Form submission failed: ' + (data.error || 'Unknown error'));
+                                    }
+                                } catch (e) {
+                                    throw new Error('Form submission failed. Status: ' + response.status + '. ' + (text || 'Unknown error'));
                                 }
-                            }).catch(() => {
-                                throw new Error('Form submission failed');
                             });
                         }
                     })
                     .catch(error => {
                         console.error('Form submission error:', error);
+                        console.error('Error details:', {
+                            message: error.message,
+                            stack: error.stack,
+                            name: error.name
+                        });
                         
-                        // Show error message in button area
-                        buttonArea.innerHTML = '<div class="error-message-box" style="background: #fee2e2; border: 2px solid #ef4444; color: #991b1b; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(239, 68, 68, 0.2);"><div style="font-size: 3rem; margin-bottom: 1rem;">✗</div><h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem; color: #991b1b;">Submission Failed</h3><p style="margin: 0.5rem 0; font-size: 1rem;">There was a problem submitting your application.</p><p style="margin: 1rem 0 0 0; font-size: 0.9rem;">Please try again or email us directly at <a href="mailto:hr@sevendyne.com" style="color: #991b1b; text-decoration: underline; font-weight: 600;">hr@sevendyne.com</a> with your resume attached.</p><button type="button" onclick="location.reload()" style="margin-top: 1rem; padding: 0.75rem 1.5rem; background: #ef4444; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">Try Again</button></div>';
+                        // Show error message in button area with more details
+                        const errorDetails = error.message || 'Unknown error occurred';
+                        buttonArea.innerHTML = '<div class="error-message-box" style="background: #fee2e2; border: 2px solid #ef4444; color: #991b1b; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(239, 68, 68, 0.2);"><div style="font-size: 3rem; margin-bottom: 1rem;">✗</div><h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem; color: #991b1b;">Submission Failed</h3><p style="margin: 0.5rem 0; font-size: 1rem;">There was a problem submitting your application.</p><p style="margin: 0.5rem 0; font-size: 0.85rem; opacity: 0.9;">' + errorDetails + '</p><p style="margin: 1rem 0 0 0; font-size: 0.9rem;">Please try again or email us directly at <a href="mailto:hr@sevendyne.com?subject=Developer Application&body=Please find my resume attached." style="color: #991b1b; text-decoration: underline; font-weight: 600;">hr@sevendyne.com</a> with your resume attached.</p><button type="button" onclick="location.reload()" style="margin-top: 1rem; padding: 0.75rem 1.5rem; background: #ef4444; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">Try Again</button></div>';
                         
-                        formMessage.innerHTML = '<div class="error-message" style="background: #fee2e2; color: #991b1b; padding: 1rem; border-radius: 8px; margin-top: 1rem;"><strong>Error:</strong> There was a problem submitting your application. Please try again or email us directly at <a href="mailto:hr@sevendyne.com" style="color: #991b1b; text-decoration: underline;">hr@sevendyne.com</a> with your resume attached.</div>';
+                        formMessage.innerHTML = '<div class="error-message" style="background: #fee2e2; color: #991b1b; padding: 1rem; border-radius: 8px; margin-top: 1rem;"><strong>Error:</strong> ' + errorDetails + '<br>Please try again or email us directly at <a href="mailto:hr@sevendyne.com" style="color: #991b1b; text-decoration: underline;">hr@sevendyne.com</a> with your resume attached.</div>';
                     });
                 });
             }
