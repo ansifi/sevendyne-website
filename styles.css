@@ -6238,7 +6238,7 @@ body {
     color: var(--text-dark);
 }
 
-/* Section Header Colors - Distinct colors for each section */
+/* Section Header Colors with Background Boxes - Distinct colors for each section */
 /* Services Section - Blue */
 .services-overview h2,
 .services-detail h2,
@@ -6247,7 +6247,13 @@ section[id*="service"] h2,
 .service-intro h2,
 .service-capabilities h2,
 .service-tech-stack h2 {
-    color: #2563eb !important; /* Primary Blue */
+    color: #ffffff !important; /* White text */
+    background: #2563eb !important; /* Primary Blue */
+    padding: 1rem 2rem !important;
+    border-radius: 12px !important;
+    display: inline-block !important;
+    margin-bottom: 1.5rem !important;
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2) !important;
 }
 
 /* Projects Section - Green */
@@ -6256,7 +6262,13 @@ section[id*="service"] h2,
 .projects-showcase h2,
 #projects h2,
 section[id*="project"] h2 {
-    color: #10b981 !important; /* Success Green */
+    color: #ffffff !important; /* White text */
+    background: #10b981 !important; /* Success Green */
+    padding: 1rem 2rem !important;
+    border-radius: 12px !important;
+    display: inline-block !important;
+    margin-bottom: 1.5rem !important;
+    box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2) !important;
 }
 
 /* Pricing Section - Orange/Amber */
@@ -6268,7 +6280,13 @@ section[id*="project"] h2 {
 .additional-fees h2,
 #pricing h2,
 section[id*="pricing"] h2 {
-    color: #f59e0b !important; /* Warning Orange */
+    color: #ffffff !important; /* White text */
+    background: #f59e0b !important; /* Warning Orange */
+    padding: 1rem 2rem !important;
+    border-radius: 12px !important;
+    display: inline-block !important;
+    margin-bottom: 1.5rem !important;
+    box-shadow: 0 4px 6px rgba(245, 158, 11, 0.2) !important;
 }
 
 /* Contact Section - Purple/Indigo */
@@ -6278,7 +6296,13 @@ section[id*="pricing"] h2 {
 #contact h2,
 section[id*="contact"] h2,
 .section-title {
-    color: #6366f1 !important; /* Indigo */
+    color: #ffffff !important; /* White text */
+    background: #6366f1 !important; /* Indigo */
+    padding: 1rem 2rem !important;
+    border-radius: 12px !important;
+    display: inline-block !important;
+    margin-bottom: 1.5rem !important;
+    box-shadow: 0 4px 6px rgba(99, 102, 241, 0.2) !important;
 }
 
 /* About Section - Teal */
@@ -6288,7 +6312,13 @@ section[id*="contact"] h2,
 .why-choose h2,
 #about h2,
 section[id*="about"] h2 {
-    color: #14b8a6 !important; /* Teal */
+    color: #ffffff !important; /* White text */
+    background: #14b8a6 !important; /* Teal */
+    padding: 1rem 2rem !important;
+    border-radius: 12px !important;
+    display: inline-block !important;
+    margin-bottom: 1.5rem !important;
+    box-shadow: 0 4px 6px rgba(20, 184, 166, 0.2) !important;
 }
 
 /* CTA Section - Pink/Rose */
@@ -6296,32 +6326,62 @@ section[id*="about"] h2 {
 .booking-section h2,
 #booking h2,
 section[id*="booking"] h2 {
-    color: #ec4899 !important; /* Pink */
+    color: #ffffff !important; /* White text */
+    background: #ec4899 !important; /* Pink */
+    padding: 1rem 2rem !important;
+    border-radius: 12px !important;
+    display: inline-block !important;
+    margin-bottom: 1.5rem !important;
+    box-shadow: 0 4px 6px rgba(236, 72, 153, 0.2) !important;
 }
 
 /* Case Studies - Purple */
 .service-case-studies h2,
 .client-success h2,
 .case-studies h2 {
-    color: #8b5cf6 !important; /* Purple */
+    color: #ffffff !important; /* White text */
+    background: #8b5cf6 !important; /* Purple */
+    padding: 1rem 2rem !important;
+    border-radius: 12px !important;
+    display: inline-block !important;
+    margin-bottom: 1.5rem !important;
+    box-shadow: 0 4px 6px rgba(139, 92, 246, 0.2) !important;
 }
 
 /* Portfolio - Cyan */
 .portfolio-section h2,
 .portfolio h2 {
-    color: #06b6d4 !important; /* Cyan */
+    color: #ffffff !important; /* White text */
+    background: #06b6d4 !important; /* Cyan */
+    padding: 1rem 2rem !important;
+    border-radius: 12px !important;
+    display: inline-block !important;
+    margin-bottom: 1.5rem !important;
+    box-shadow: 0 4px 6px rgba(6, 182, 212, 0.2) !important;
 }
 
 /* Industries - Emerald */
 .industries h2 {
-    color: #059669 !important; /* Emerald */
+    color: #ffffff !important; /* White text */
+    background: #059669 !important; /* Emerald */
+    padding: 1rem 2rem !important;
+    border-radius: 12px !important;
+    display: inline-block !important;
+    margin-bottom: 1.5rem !important;
+    box-shadow: 0 4px 6px rgba(5, 150, 105, 0.2) !important;
 }
 
 /* FAQ Section - Slate */
 .contact-faq h2,
 .pricing-faq h2,
 .faq-section h2 {
-    color: #475569 !important; /* Slate */
+    color: #ffffff !important; /* White text */
+    background: #475569 !important; /* Slate */
+    padding: 1rem 2rem !important;
+    border-radius: 12px !important;
+    display: inline-block !important;
+    margin-bottom: 1.5rem !important;
+    box-shadow: 0 4px 6px rgba(71, 85, 105, 0.2) !important;
 }
 
 .contact-subtitle {
