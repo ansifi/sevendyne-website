@@ -77,7 +77,6 @@
                     
                     <form id="joinForm" class="contact-form" action="https://formspree.io/f/mldoabko" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="_subject" value="New Developer Application - Sevendyne">
-                        <input type="hidden" name="_replyto" id="_replyto" value="">
                         <input type="hidden" name="_cc" value="hr@sevendyne.com">
                         
                         <div class="form-group">
@@ -236,22 +235,8 @@
             const formMessage = document.getElementById('formMessage');
 
             if (joinForm) {
-                // Sync email field with _replyto hidden field
-                const emailField = document.getElementById('email');
-                const replyToField = document.getElementById('_replyto');
-                if (emailField && replyToField) {
-                    emailField.addEventListener('change', function() {
-                        replyToField.value = emailField.value;
-                    });
-                }
-
                 joinForm.addEventListener('submit', function(e) {
                     e.preventDefault();
-                    
-                    // Update _replyto field with email value
-                    if (emailField && replyToField) {
-                        replyToField.value = emailField.value;
-                    }
                     
                     const formData = new FormData(joinForm);
                     const submitButton = joinForm.querySelector('button[type="submit"]');
