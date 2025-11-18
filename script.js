@@ -300,4 +300,225 @@ document.querySelectorAll('.stat-item h3, .hero-stat strong').forEach(stat => {
     statsObserver.observe(stat);
 });
 
+// Multi-Step Form Modal
+let currentStep = 1;
+const totalSteps = 3;
+
+// Open modal when Get Started buttons are clicked
+document.addEventListener('DOMContentLoaded', function() {
+    const getStartedButtons = document.querySelectorAll('.get-started-btn');
+    const modal = document.getElementById('getStartedModal');
+    const modalClose = document.querySelector('.modal-close');
+    const modalPlanName = document.getElementById('modalPlanName');
+    const formPlan = document.getElementById('formPlan');
+    const formPrice = document.getElementById('formPrice');
+    const getStartedForm = document.getElementById('getStartedForm');
+    
+    // Open modal
+    getStartedButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const plan = this.getAttribute('data-plan');
+            const price = this.getAttribute('data-price');
+            
+            modalPlanName.textContent = plan;
+            formPlan.value = plan;
+            formPrice.value = price;
+            
+            // Reset form to step 1
+            currentStep = 1;
+            showStep(1);
+            updateProgress();
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+    
+    // Close modal
+    if (modalClose) {
+        modalClose.addEventListener('click', function() {
+            closeModal();
+        });
+    }
+    
+    // Close modal when clicking outside
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+    
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+    
+    // Form submission
+    if (getStartedForm) {
+        getStartedForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            submitForm();
+        });
+    }
+});
+
+function closeModal() {
+    const modal = document.getElementById('getStartedModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    
+    // Reset form after a delay
+    setTimeout(() => {
+        currentStep = 1;
+        showStep(1);
+        updateProgress();
+        document.getElementById('getStartedForm').reset();
+        const formMessage = document.getElementById('formMessage');
+        if (formMessage) {
+            formMessage.style.display = 'none';
+            formMessage.textContent = '';
+        }
+    }, 300);
+}
+
+function showStep(step) {
+    const steps = document.querySelectorAll('.form-step');
+    steps.forEach((s, index) => {
+        if (index + 1 === step) {
+            s.classList.add('active');
+        } else {
+            s.classList.remove('active');
+        }
+    });
+}
+
+function updateProgress() {
+    const progressSteps = document.querySelectorAll('.progress-step');
+    progressSteps.forEach((step, index) => {
+        const stepNum = index + 1;
+        step.classList.remove('active', 'completed');
+        
+        if (stepNum < currentStep) {
+            step.classList.add('completed');
+        } else if (stepNum === currentStep) {
+            step.classList.add('active');
+        }
+    });
+}
+
+function nextStep() {
+    const currentStepElement = document.querySelector(`.form-step[data-step="${currentStep}"]`);
+    const requiredFields = currentStepElement.querySelectorAll('[required]');
+    let isValid = true;
+    
+    // Validate required fields in current step
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+            isValid = false;
+            field.style.borderColor = '#ef4444';
+            field.addEventListener('input', function() {
+                this.style.borderColor = '#e5e7eb';
+            }, { once: true });
+        }
+    });
+    
+    if (!isValid) {
+        return;
+    }
+    
+    if (currentStep < totalSteps) {
+        currentStep++;
+        showStep(currentStep);
+        updateProgress();
+    }
+}
+
+function prevStep() {
+    if (currentStep > 1) {
+        currentStep--;
+        showStep(currentStep);
+        updateProgress();
+    }
+}
+
+function submitForm() {
+    const form = document.getElementById('getStartedForm');
+    const formMessage = document.getElementById('formMessage');
+    const submitButton = form.querySelector('.btn-submit');
+    
+    // Validate final step
+    const requiredFields = form.querySelectorAll('[required]');
+    let isValid = true;
+    
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+            isValid = false;
+            field.style.borderColor = '#ef4444';
+            field.addEventListener('input', function() {
+                this.style.borderColor = '#e5e7eb';
+            }, { once: true });
+        }
+    });
+    
+    if (!isValid) {
+        // Go to step with first invalid field
+        requiredFields.forEach(field => {
+            if (!field.value.trim()) {
+                const stepElement = field.closest('.form-step');
+                if (stepElement) {
+                    const stepNum = parseInt(stepElement.getAttribute('data-step'));
+                    currentStep = stepNum;
+                    showStep(currentStep);
+                    updateProgress();
+                }
+                field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+        });
+        return;
+    }
+    
+    // Disable submit button
+    submitButton.disabled = true;
+    submitButton.textContent = 'Submitting...';
+    
+    // Submit to Formspree via AJAX
+    const formData = new FormData(form);
+    
+    fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            formMessage.style.display = 'block';
+            formMessage.className = 'form-message success';
+            formMessage.textContent = '✓ Message sent successfully! We will revert within 24-48 hours.';
+            form.reset();
+            
+            // Close modal after 3 seconds
+            setTimeout(() => {
+                closeModal();
+            }, 3000);
+        } else {
+            throw new Error('Form submission failed');
+        }
+    })
+    .catch(error => {
+        formMessage.style.display = 'block';
+        formMessage.className = 'form-message error';
+        formMessage.textContent = '✗ There was an error submitting your form. Please try again or email us directly at hr@sevendyne.com';
+        submitButton.disabled = false;
+        submitButton.textContent = 'Submit Inquiry';
+    });
+}
+
+// Make functions globally available for onclick handlers
+window.nextStep = nextStep;
+window.prevStep = prevStep;
 

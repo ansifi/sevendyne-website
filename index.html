@@ -237,7 +237,7 @@
                         <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9;">✓ Weekly progress updates</li>
                         <li style="padding: 0.75rem 0;">✓ Email support</li>
                     </ul>
-                    <a href="mailto:hr@sevendyne.com?subject=Starter Plan Inquiry&body=Hi, I'm interested in the Starter plan (₹40,000/month). Please provide more information." class="btn-primary" style="width: 100%; display: block; text-align: center; margin-top: 1.5rem; background: var(--tile-bg); color: var(--primary-color); border: 1px solid rgba(37, 99, 235, 0.2);">Get Started</a>
+                    <button type="button" class="btn-primary get-started-btn" data-plan="Starter" data-price="₹40,000/month" style="width: 100%; display: block; text-align: center; margin-top: 1.5rem; background: var(--tile-bg); color: var(--primary-color); border: 1px solid rgba(37, 99, 235, 0.2); cursor: pointer; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; transition: all 0.3s;">Get Started</button>
                 </div>
 
                 <!-- Professional Tier -->
@@ -260,7 +260,7 @@
                         <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9;">✓ Priority response for issues</li>
                         <li style="padding: 0.75rem 0;">✓ Daily standups & progress reports</li>
                     </ul>
-                    <a href="mailto:hr@sevendyne.com?subject=Professional Plan Inquiry&body=Hi, I'm interested in the Professional plan (₹100,000/month). Please provide more information." class="btn-primary" style="width: 100%; display: block; text-align: center; margin-top: 1.5rem;">Get Started</a>
+                    <button type="button" class="btn-primary get-started-btn" data-plan="Professional" data-price="₹100,000/month" style="width: 100%; display: block; text-align: center; margin-top: 1.5rem; background: var(--tile-bg); color: var(--primary-color); border: 1px solid rgba(37, 99, 235, 0.2); cursor: pointer; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; transition: all 0.3s;">Get Started</button>
                 </div>
 
                 <!-- Enterprise Tier -->
@@ -283,7 +283,7 @@
                         <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9;">✓ 24/7 priority support</li>
                         <li style="padding: 0.75rem 0;">✓ SLA guarantees</li>
                     </ul>
-                    <a href="mailto:hr@sevendyne.com?subject=Enterprise Plan Inquiry&body=Hi, I'm interested in the Enterprise Pod plan (₹300,000/month). Please provide more information." class="btn-primary" style="width: 100%; display: block; text-align: center; margin-top: 1.5rem; background: var(--tile-bg); color: var(--primary-color); border: 1px solid rgba(37, 99, 235, 0.2);">Get Started</a>
+                    <button type="button" class="btn-primary get-started-btn" data-plan="Enterprise Pod" data-price="₹300,000/month" style="width: 100%; display: block; text-align: center; margin-top: 1.5rem; background: var(--tile-bg); color: var(--primary-color); border: 1px solid rgba(37, 99, 235, 0.2); cursor: pointer; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; transition: all 0.3s;">Get Started</button>
                 </div>
 
                 <!-- Project-Based -->
@@ -304,7 +304,7 @@
                         <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9;">✓ No monthly commitment</li>
                         <li style="padding: 0.75rem 0;">✓ Transparent time tracking</li>
                     </ul>
-                    <a href="mailto:hr@sevendyne.com?subject=Project-Based Quote Request&body=Hi, I'm interested in project-based development (₹1,500/hour). Please provide a quote for my project." class="btn-primary" style="width: 100%; display: block; text-align: center; margin-top: 1.5rem;">Get Quote</a>
+                    <button type="button" class="btn-primary get-started-btn" data-plan="Project-Based" data-price="₹1,500/hour" style="width: 100%; display: block; text-align: center; margin-top: 1.5rem; background: var(--tile-bg); color: var(--primary-color); border: 1px solid rgba(37, 99, 235, 0.2); cursor: pointer; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; transition: all 0.3s;">Get Quote</button>
                 </div>
             </div>
 
@@ -444,6 +444,142 @@
             </div>
         </div>
     </footer>
+
+    <!-- Get Started Modal -->
+    <div id="getStartedModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Get Started with <span id="modalPlanName"></span></h2>
+            <p class="modal-subtitle">Tell us about your project needs and we'll get back to you within 24 hours.</p>
+            
+            <!-- Progress Steps -->
+            <div class="form-progress">
+                <div class="progress-step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Contact Info</div>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Project Details</div>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Requirements</div>
+                </div>
+            </div>
+            
+            <form id="getStartedForm" action="https://formspree.io/f/mldoabko" method="POST">
+                <input type="hidden" name="_subject" value="New Plan Inquiry - Sevendyne">
+                <input type="hidden" name="plan" id="formPlan">
+                <input type="hidden" name="price" id="formPrice">
+                
+                <!-- Step 1: Contact Information -->
+                <div class="form-step active" data-step="1">
+                    <h3>Contact Information</h3>
+                    <p class="step-description">Let's start with your basic contact details.</p>
+                    
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Work Email *</label>
+                        <input type="email" id="email" name="_replyto" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone / WhatsApp</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91 95441 39564">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company / Product</label>
+                        <input type="text" id="company" name="company" placeholder="Your company or product name">
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" class="btn-next" onclick="nextStep()">Next →</button>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Project Details -->
+                <div class="form-step" data-step="2">
+                    <h3>Project Details</h3>
+                    <p class="step-description">Help us understand your project better.</p>
+                    
+                    <div class="form-group">
+                        <label for="projectType">Project Type</label>
+                        <select id="projectType" name="project_type">
+                            <option value="">Select project type</option>
+                            <option value="web-app">Web Application</option>
+                            <option value="mobile-app">Mobile Application</option>
+                            <option value="ai-ml">AI/ML Application</option>
+                            <option value="devops">DevOps & Infrastructure</option>
+                            <option value="crm-payments">CRM / Payment System</option>
+                            <option value="full-stack">Full-Stack Development</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="techStack">Technology Stack / Requirements</label>
+                        <textarea id="techStack" name="tech_stack" rows="3" placeholder="e.g., React, Django, React Native, Node.js, Python, etc."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="timeline">Expected Timeline</label>
+                        <select id="timeline" name="timeline">
+                            <option value="">Select timeline</option>
+                            <option value="asap">ASAP</option>
+                            <option value="1-month">Within 1 month</option>
+                            <option value="2-3-months">2-3 months</option>
+                            <option value="3-6-months">3-6 months</option>
+                            <option value="6-months-plus">6+ months</option>
+                            <option value="ongoing">Ongoing support</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="budget">Budget Range</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select budget range</option>
+                            <option value="under-50k">Under ₹50,000/month</option>
+                            <option value="50k-1l">₹50,000 - ₹1,00,000/month</option>
+                            <option value="1l-3l">₹1,00,000 - ₹3,00,000/month</option>
+                            <option value="3l-plus">₹3,00,000+/month</option>
+                            <option value="project-based">Project-based (hourly)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" class="btn-prev" onclick="prevStep()">← Previous</button>
+                        <button type="button" class="btn-next" onclick="nextStep()">Next →</button>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Requirements -->
+                <div class="form-step" data-step="3">
+                    <h3>Project Requirements</h3>
+                    <p class="step-description">Tell us more about your project needs and requirements.</p>
+                    
+                    <div class="form-group">
+                        <label for="message">Project Description & Requirements *</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Describe your project, key features needed, current challenges, and any specific requirements..." required></textarea>
+                    </div>
+                    
+                    <div id="formMessage" class="form-message" style="display: none;"></div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" class="btn-prev" onclick="prevStep()">← Previous</button>
+                        <button type="submit" class="btn-submit">Submit Inquiry</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

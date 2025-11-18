@@ -1,10 +1,10 @@
 #!/bin/bash
-# Start Sevendyne website server on port 7007
+# Start Sevendyne website server on port 5001
 
-PORT=7007
+PORT=5001
 DIR="/home/ansif/works/sevendyne/ads/website"
 
-# Kill any existing process on port 7007
+# Kill any existing process on port 5001
 lsof -ti:$PORT 2>/dev/null | xargs kill -9 2>/dev/null
 
 # Change to directory
