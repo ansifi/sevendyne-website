@@ -22,20 +22,6 @@
                 <a href="join/">Join Us</a>
                 <a class="featured-link" href="contact/">Request Support</a>
             </nav>
-            <div class="currency-selector">
-                <select id="currencySelector" style="padding: 0.5rem 1rem; border: 1px solid #e5e7eb; border-radius: 6px; font-size: 0.9rem; background: white; cursor: pointer;">
-                    <option value="INR">🇮🇳 India (INR)</option>
-                    <option value="USD">🇺🇸 United States (USD)</option>
-                    <option value="GBP">🇬🇧 United Kingdom (GBP)</option>
-                    <option value="EUR">🇩🇪 Germany (EUR)</option>
-                    <option value="EUR-FR">🇫🇷 France (EUR)</option>
-                    <option value="CNY">🇨🇳 China (CNY)</option>
-                    <option value="RUB">🇷🇺 Russia (RUB)</option>
-                    <option value="AED">🇦🇪 UAE (AED)</option>
-                    <option value="MYR">🇲🇾 Malaysia (MYR)</option>
-                    <option value="SGD">🇸🇬 Singapore (SGD)</option>
-                </select>
-            </div>
         </div>
     </header>
 
@@ -107,15 +93,34 @@
 
                         <div class="form-group">
                             <label for="budget">Project Budget Range</label>
-                            <select id="budget" name="budget">
-                                <option value="">Select budget range...</option>
-                                <option value="under-50k" data-inr="50000">Under ₹50,000</option>
-                                <option value="50k-2l" data-inr-min="50000" data-inr-max="200000">₹50,000 - ₹2,00,000</option>
-                                <option value="2l-10l" data-inr-min="200000" data-inr-max="1000000">₹2,00,000 - ₹10,00,000</option>
-                                <option value="10l-plus" data-inr="1000000">₹10,00,000+</option>
-                                <option value="monthly-retainer">Monthly Retainer</option>
-                                <option value="not-sure">Not Sure Yet</option>
-                            </select>
+                            <div style="display: flex; gap: 1rem; align-items: flex-end;">
+                                <div style="flex: 1;">
+                                    <select id="budget" name="budget" style="width: 100%;">
+                                        <option value="">Select budget range...</option>
+                                        <option value="under-50k" data-inr="50000">Under ₹50,000</option>
+                                        <option value="50k-2l" data-inr-min="50000" data-inr-max="200000">₹50,000 - ₹2,00,000</option>
+                                        <option value="2l-10l" data-inr-min="200000" data-inr-max="1000000">₹2,00,000 - ₹10,00,000</option>
+                                        <option value="10l-plus" data-inr="1000000">₹10,00,000+</option>
+                                        <option value="monthly-retainer">Monthly Retainer</option>
+                                        <option value="not-sure">Not Sure Yet</option>
+                                    </select>
+                                </div>
+                                <div style="flex: 0 0 auto;">
+                                    <label for="currencySelector" style="display: block; margin-bottom: 0.5rem; font-size: 0.875rem; color: var(--text-light); font-weight: 500;">Currency:</label>
+                                    <select id="currencySelector" style="padding: 0.5rem 1rem; border: 1px solid #e5e7eb; border-radius: 6px; font-size: 0.9rem; background: white; cursor: pointer; min-width: 180px;">
+                                        <option value="INR">🇮🇳 India (INR)</option>
+                                        <option value="USD">🇺🇸 United States (USD)</option>
+                                        <option value="GBP">🇬🇧 United Kingdom (GBP)</option>
+                                        <option value="EUR">🇩🇪 Germany (EUR)</option>
+                                        <option value="EUR-FR">🇫🇷 France (EUR)</option>
+                                        <option value="CNY">🇨🇳 China (CNY)</option>
+                                        <option value="RUB">🇷🇺 Russia (RUB)</option>
+                                        <option value="AED">🇦🇪 UAE (AED)</option>
+                                        <option value="MYR">🇲🇾 Malaysia (MYR)</option>
+                                        <option value="SGD">🇸🇬 Singapore (SGD)</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-group">

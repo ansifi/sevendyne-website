@@ -69,21 +69,6 @@ body {
     border-color: var(--primary-color);
 }
 
-@media (max-width: 768px) {
-    .header .container {
-        flex-wrap: wrap;
-    }
-    
-    .currency-selector {
-        order: 3;
-        width: 100%;
-        margin-top: 0.5rem;
-    }
-    
-    .currency-selector select {
-        width: 100%;
-    }
-}
 
 .logo {
     display: flex;
