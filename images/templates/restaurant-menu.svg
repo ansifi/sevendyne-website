@@ -1,0 +1,82 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff7ed;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fed7aa;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+  
+  <!-- Header Bar -->
+  <rect x="0" y="0" width="800" height="60" fill="#7c2d12"/>
+  <text x="30" y="38" font-family="Arial, sans-serif" font-size="20" fill="white" font-weight="bold">Restaurant Menu</text>
+  <circle cx="750" cy="30" r="15" fill="#f59e0b"/>
+  <text x="750" y="35" font-family="Arial" font-size="12" fill="white" text-anchor="middle">🍽️</text>
+  
+  <!-- Menu Categories -->
+  <rect x="30" y="80" width="120" height="35" rx="6" fill="#7c2d12"/>
+  <text x="90" y="102" font-family="Arial" font-size="13" fill="white" text-anchor="middle" font-weight="bold">All Items</text>
+  
+  <rect x="160" y="80" width="120" height="35" rx="6" fill="white" stroke="#7c2d12" stroke-width="1"/>
+  <text x="220" y="102" font-family="Arial" font-size="13" fill="#7c2d12" text-anchor="middle">Appetizers</text>
+  
+  <rect x="290" y="80" width="120" height="35" rx="6" fill="white" stroke="#7c2d12" stroke-width="1"/>
+  <text x="350" y="102" font-family="Arial" font-size="13" fill="#7c2d12" text-anchor="middle">Main Course</text>
+  
+  <rect x="420" y="80" width="120" height="35" rx="6" fill="white" stroke="#7c2d12" stroke-width="1"/>
+  <text x="480" y="102" font-family="Arial" font-size="13" fill="#7c2d12" text-anchor="middle">Desserts</text>
+  
+  <!-- Menu Items Grid -->
+  <!-- Item 1 -->
+  <rect x="30" y="140" width="220" height="150" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="40" y="150" width="200" height="80" rx="6" fill="#f1f5f9"/>
+  <text x="50" y="175" font-family="Arial" font-size="11" fill="#64748b">🍕</text>
+  <text x="50" y="250" font-family="Arial" font-size="14" fill="#1e293b" font-weight="bold">Margherita Pizza</text>
+  <text x="50" y="270" font-family="Arial" font-size="11" fill="#64748b">Classic Italian pizza with fresh mozzarella</text>
+  <text x="50" y="290" font-family="Arial" font-size="16" fill="#7c2d12" font-weight="bold">₹299</text>
+  <rect x="200" y="280" width="40" height="25" rx="4" fill="#f59e0b"/>
+  <text x="220" y="296" font-family="Arial" font-size="11" fill="white" text-anchor="middle">Add</text>
+  
+  <!-- Item 2 -->
+  <rect x="270" y="140" width="220" height="150" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="280" y="150" width="200" height="80" rx="6" fill="#f1f5f9"/>
+  <text x="290" y="175" font-family="Arial" font-size="11" fill="#64748b">🍔</text>
+  <text x="290" y="250" font-family="Arial" font-size="14" fill="#1e293b" font-weight="bold">Classic Burger</text>
+  <text x="290" y="270" font-family="Arial" font-size="11" fill="#64748b">Juicy beef patty with fresh vegetables</text>
+  <text x="290" y="290" font-family="Arial" font-size="16" fill="#7c2d12" font-weight="bold">₹199</text>
+  <rect x="440" y="280" width="40" height="25" rx="4" fill="#f59e0b"/>
+  <text x="460" y="296" font-family="Arial" font-size="11" fill="white" text-anchor="middle">Add</text>
+  
+  <!-- Item 3 -->
+  <rect x="510" y="140" width="220" height="150" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="520" y="150" width="200" height="80" rx="6" fill="#f1f5f9"/>
+  <text x="530" y="175" font-family="Arial" font-size="11" fill="#64748b">🍝</text>
+  <text x="530" y="250" font-family="Arial" font-size="14" fill="#1e293b" font-weight="bold">Pasta Carbonara</text>
+  <text x="530" y="270" font-family="Arial" font-size="11" fill="#64748b">Creamy pasta with bacon and parmesan</text>
+  <text x="530" y="290" font-family="Arial" font-size="16" fill="#7c2d12" font-weight="bold">₹349</text>
+  <rect x="680" y="280" width="40" height="25" rx="4" fill="#f59e0b"/>
+  <text x="700" y="296" font-family="Arial" font-size="11" fill="white" text-anchor="middle">Add</text>
+  
+  <!-- Cart Summary -->
+  <rect x="30" y="310" width="700" height="150" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="50" y="340" font-family="Arial" font-size="16" fill="#1e293b" font-weight="bold">Cart Summary</text>
+  
+  <!-- Cart Items -->
+  <line x1="50" y1="360" x2="700" y2="360" stroke="#e2e8f0"/>
+  <text x="70" y="380" font-family="Arial" font-size="12" fill="#1e293b">Margherita Pizza</text>
+  <text x="200" y="380" font-family="Arial" font-size="11" fill="#64748b">× 2</text>
+  <text x="600" y="380" font-family="Arial" font-size="12" fill="#1e293b" font-weight="bold">₹598</text>
+  
+  <text x="70" y="405" font-family="Arial" font-size="12" fill="#1e293b">Classic Burger</text>
+  <text x="200" y="405" font-family="Arial" font-size="11" fill="#64748b">× 1</text>
+  <text x="600" y="405" font-family="Arial" font-size="12" fill="#1e293b" font-weight="bold">₹199</text>
+  
+  <line x1="50" y1="425" x2="700" y2="425" stroke="#e2e8f0"/>
+  <text x="550" y="445" font-family="Arial" font-size="13" fill="#64748b">Total:</text>
+  <text x="600" y="445" font-family="Arial" font-size="18" fill="#7c2d12" font-weight="bold">₹797</text>
+  
+  <rect x="600" y="460" width="100" height="35" rx="6" fill="#7c2d12"/>
+  <text x="650" y="482" font-family="Arial" font-size="13" fill="white" text-anchor="middle" font-weight="bold">Checkout</text>
+</svg>

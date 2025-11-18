@@ -1,0 +1,92 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+  
+  <!-- Header Bar -->
+  <rect x="0" y="0" width="800" height="60" fill="#1e293b"/>
+  <text x="30" y="38" font-family="Arial, sans-serif" font-size="20" fill="white" font-weight="bold">HRMS Dashboard</text>
+  <circle cx="750" cy="30" r="15" fill="#8b5cf6"/>
+  <text x="750" y="35" font-family="Arial" font-size="12" fill="white" text-anchor="middle">👥</text>
+  
+  <!-- Stats Cards -->
+  <rect x="30" y="80" width="160" height="100" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="40" y="105" font-family="Arial" font-size="12" fill="#64748b">Total Employees</text>
+  <text x="40" y="135" font-family="Arial" font-size="28" fill="#1e293b" font-weight="bold">245</text>
+  <rect x="40" y="145" width="140" height="4" rx="2" fill="#8b5cf6" opacity="0.3"/>
+  
+  <rect x="210" y="80" width="160" height="100" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="220" y="105" font-family="Arial" font-size="12" fill="#64748b">On Leave</text>
+  <text x="220" y="135" font-family="Arial" font-size="28" fill="#1e293b" font-weight="bold">12</text>
+  <rect x="220" y="145" width="140" height="4" rx="2" fill="#f59e0b" opacity="0.3"/>
+  
+  <rect x="390" y="80" width="160" height="100" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="400" y="105" font-family="Arial" font-size="12" fill="#64748b">Present Today</text>
+  <text x="400" y="135" font-family="Arial" font-size="28" fill="#1e293b" font-weight="bold">228</text>
+  <rect x="400" y="145" width="140" height="4" rx="2" fill="#10b981" opacity="0.3"/>
+  
+  <rect x="570" y="80" width="160" height="100" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="580" y="105" font-family="Arial" font-size="12" fill="#64748b">Pending Tasks</text>
+  <text x="580" y="135" font-family="Arial" font-size="28" fill="#1e293b" font-weight="bold">18</text>
+  <rect x="580" y="145" width="140" height="4" rx="2" fill="#ef4444" opacity="0.3"/>
+  
+  <!-- Employee List -->
+  <rect x="30" y="200" width="360" height="250" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="50" y="230" font-family="Arial" font-size="16" fill="#1e293b" font-weight="bold">Recent Employees</text>
+  
+  <!-- Employee Cards -->
+  <rect x="50" y="250" width="320" height="60" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+  <circle cx="80" cy="280" r="20" fill="#3b82f6"/>
+  <text x="80" y="286" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">JD</text>
+  <text x="110" y="275" font-family="Arial" font-size="13" fill="#1e293b" font-weight="bold">John Doe</text>
+  <text x="110" y="295" font-family="Arial" font-size="11" fill="#64748b">Software Developer</text>
+  <rect x="300" y="270" width="60" height="20" rx="10" fill="#10b981" opacity="0.2"/>
+  <text x="330" y="283" font-family="Arial" font-size="10" fill="#10b981" text-anchor="middle">Active</text>
+  
+  <rect x="50" y="320" width="320" height="60" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+  <circle cx="80" cy="350" r="20" fill="#8b5cf6"/>
+  <text x="80" y="356" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">JS</text>
+  <text x="110" y="345" font-family="Arial" font-size="13" fill="#1e293b" font-weight="bold">Jane Smith</text>
+  <text x="110" y="365" font-family="Arial" font-size="11" fill="#64748b">HR Manager</text>
+  <rect x="300" y="340" width="60" height="20" rx="10" fill="#10b981" opacity="0.2"/>
+  <text x="330" y="353" font-family="Arial" font-size="10" fill="#10b981" text-anchor="middle">Active</text>
+  
+  <rect x="50" y="390" width="320" height="60" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+  <circle cx="80" cy="420" r="20" fill="#f59e0b"/>
+  <text x="80" y="426" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">MJ</text>
+  <text x="110" y="415" font-family="Arial" font-size="13" fill="#1e293b" font-weight="bold">Mike Johnson</text>
+  <text x="110" y="435" font-family="Arial" font-size="11" fill="#64748b">Project Manager</text>
+  <rect x="300" y="405" width="60" height="20" rx="10" fill="#f59e0b" opacity="0.2"/>
+  <text x="330" y="418" font-family="Arial" font-size="10" fill="#f59e0b" text-anchor="middle">On Leave</text>
+  
+  <!-- Attendance Chart -->
+  <rect x="410" y="200" width="360" height="250" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="430" y="230" font-family="Arial" font-size="16" fill="#1e293b" font-weight="bold">Attendance This Week</text>
+  
+  <!-- Chart Bars -->
+  <rect x="450" y="280" width="40" height="120" rx="4" fill="#3b82f6"/>
+  <text x="470" y="415" font-family="Arial" font-size="10" fill="#64748b" text-anchor="middle">Mon</text>
+  
+  <rect x="510" y="260" width="40" height="140" rx="4" fill="#10b981"/>
+  <text x="530" y="415" font-family="Arial" font-size="10" fill="#64748b" text-anchor="middle">Tue</text>
+  
+  <rect x="570" y="270" width="40" height="130" rx="4" fill="#3b82f6"/>
+  <text x="590" y="415" font-family="Arial" font-size="10" fill="#64748b" text-anchor="middle">Wed</text>
+  
+  <rect x="630" y="250" width="40" height="150" rx="4" fill="#10b981"/>
+  <text x="650" y="415" font-family="Arial" font-size="10" fill="#64748b" text-anchor="middle">Thu</text>
+  
+  <rect x="690" y="290" width="40" height="110" rx="4" fill="#f59e0b"/>
+  <text x="710" y="415" font-family="Arial" font-size="10" fill="#64748b" text-anchor="middle">Fri</text>
+  
+  <!-- Y-axis labels -->
+  <text x="430" y="280" font-family="Arial" font-size="10" fill="#64748b">240</text>
+  <text x="430" y="320" font-family="Arial" font-size="10" fill="#64748b">200</text>
+  <text x="430" y="360" font-family="Arial" font-size="10" fill="#64748b">150</text>
+</svg>

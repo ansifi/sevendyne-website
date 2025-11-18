@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Header Images</title>
+    <style>
+        body { padding: 2rem; font-family: Arial; }
+        .test-image { margin: 2rem 0; border: 2px solid #ccc; padding: 1rem; }
+        .test-image img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+    <h1>Testing Header Images</h1>
+    
+    <div class="test-image">
+        <h2>Restaurant Ordering Header</h2>
+        <img src="images/templates/restaurant-ordering-header.svg?v=1762937614156" 
+             alt="Restaurant Header"
+             onerror="console.error('Failed to load restaurant header'); this.style.border='3px solid red';">
+    </div>
+    
+    <div class="test-image">
+        <h2>Inventory Warehouse Header</h2>
+        <img src="images/templates/inventory-warehouse-header.svg?v=1762937614156" 
+             alt="Inventory Header"
+             onerror="console.error('Failed to load inventory header'); this.style.border='3px solid red';">
+    </div>
+    
+    <script>
+        console.log('Testing header images...');
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('load', () => console.log('Loaded:', img.src));
+            img.addEventListener('error', () => console.error('Failed:', img.src));
+        });
+    </script>
+</body>
+</html>

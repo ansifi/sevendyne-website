@@ -1,0 +1,265 @@
+{
+  "templates": [
+    {
+      "id": "pos-basic",
+      "name": "Retail POS System",
+      "industry": "Retail",
+      "tagline": "Complete point-of-sale solution for retail stores",
+      "description": "Modern POS system with inventory management, billing, and analytics. Perfect for retail shops, supermarkets, and boutiques.",
+      "features": [
+        "Sales & Billing",
+        "Inventory Management",
+        "Barcode Scanning",
+        "Multiple Payment Methods",
+        "Customer Management",
+        "Sales Reports & Analytics",
+        "User Roles & Permissions",
+        "GST Invoicing",
+        "Low Stock Alerts",
+        "Product Variants"
+      ],
+      "baseCost": 75000,
+      "baseDurationDays": 21,
+      "techOptions": [
+        "Flutter (Mobile)",
+        "React + Node.js (Web)",
+        "Laravel (Web)"
+      ],
+      "previewScreens": [
+        "images/templates/pos-dashboard.svg",
+        "images/templates/pos-billing.svg",
+        "images/templates/pos-inventory.svg"
+      ],
+      "demoUrl": "http://127.0.0.1:8200/demo/pos/",
+      "liveAppUrl": "http://127.0.0.1:8200/app/login/?demo=pos&username=manager%40retail.demo&password=demo123&autologin=1",
+      "category": "Retail & E-commerce"
+    },
+    {
+      "id": "hrms-complete",
+      "name": "Complete HRMS Solution",
+      "industry": "Human Resources",
+      "tagline": "End-to-end HR management for growing companies",
+      "description": "Comprehensive HRMS with employee management, payroll, attendance, and leave tracking. Ideal for companies with 10-500 employees.",
+      "features": [
+        "Employee Database",
+        "Attendance Tracking",
+        "Leave Management",
+        "Payroll Processing",
+        "Performance Reviews",
+        "Document Management",
+        "Employee Self-Service Portal",
+        "Recruitment Module",
+        "Expense Management",
+        "Reports & Analytics"
+      ],
+      "baseCost": 120000,
+      "baseDurationDays": 30,
+      "techOptions": [
+        "React + Node.js",
+        "Laravel + Vue.js",
+        "Django + React"
+      ],
+      "previewScreens": [
+        "images/templates/hrms-dashboard.svg",
+        "images/templates/hrms-attendance.svg",
+        "images/templates/hrms-payroll.svg"
+      ],
+      "demoUrl": "http://127.0.0.1:8200/demo/hrms/",
+      "liveAppUrl": "http://127.0.0.1:8200/app/login/?demo=hrms&username=hrd%40demo&password=demo123&autologin=1",
+      "category": "Business Management"
+    },
+    {
+      "id": "school-management",
+      "name": "School Management System",
+      "industry": "Education",
+      "tagline": "Complete school administration solution",
+      "description": "Comprehensive school management system with student records, attendance, exams, fees, and parent portal. Perfect for K-12 schools.",
+      "features": [
+        "Student Database",
+        "Attendance Tracking",
+        "Fee Management",
+        "Exam & Grades",
+        "Timetable Management",
+        "Parent Portal",
+        "Teacher Portal",
+        "Library Management",
+        "Transport Management",
+        "SMS & Email Notifications",
+        "Reports & Analytics"
+      ],
+      "baseCost": 150000,
+      "baseDurationDays": 45,
+      "techOptions": [
+        "React + Node.js",
+        "Laravel + Vue.js",
+        "Django + React"
+      ],
+      "previewScreens": [
+        "images/templates/school-dashboard.svg",
+        "images/templates/school-students.svg",
+        "images/templates/school-fees.svg"
+      ],
+      "demoUrl": "http://127.0.0.1:8200/demo/school/",
+      "liveAppUrl": "http://127.0.0.1:8200/app/login/?demo=school&username=principal%40demo&password=demo123&autologin=1",
+      "category": "Education"
+    },
+    {
+      "id": "restaurant-ordering",
+      "name": "Restaurant Ordering System",
+      "industry": "Food & Beverage",
+      "tagline": "Digital menu and online ordering platform",
+      "description": "Complete restaurant ordering system with QR menu, online ordering, kitchen display, and table management. Perfect for restaurants and cloud kitchens.",
+      "features": [
+        "Digital Menu with Images",
+        "QR Code Ordering",
+        "Online Ordering",
+        "Table Management",
+        "Kitchen Display System",
+        "Order Tracking",
+        "Payment Integration",
+        "Customer Reviews",
+        "Discount & Offers",
+        "Sales Analytics",
+        "Delivery Integration"
+      ],
+      "baseCost": 85000,
+      "baseDurationDays": 25,
+      "techOptions": [
+        "Flutter (Mobile)",
+        "React + Node.js (Web)",
+        "Laravel (Web + Mobile)"
+      ],
+      "previewScreens": [
+        "images/templates/restaurant-ordering-header.svg",
+        "images/templates/restaurant-menu.svg",
+        "images/templates/restaurant-order.svg"
+      ],
+      "demoUrl": "http://127.0.0.1:8200/demo/restaurant/",
+      "liveAppUrl": "http://127.0.0.1:8200/app/login/?demo=restaurant&username=admin%40restaurant.demo&password=demo123&autologin=1",
+      "category": "Food & Beverage"
+    },
+    {
+      "id": "appointment-booking",
+      "name": "Appointment Booking System",
+      "industry": "Healthcare & Services",
+      "tagline": "Online appointment scheduling for service businesses",
+      "description": "Professional appointment booking system with calendar management, automated reminders, and payment integration. Perfect for clinics, salons, consultants.",
+      "features": [
+        "Online Booking Calendar",
+        "Service Provider Management",
+        "Customer Database",
+        "SMS & Email Reminders",
+        "Payment Integration",
+        "Recurring Appointments",
+        "Waiting List Management",
+        "Customer Portal",
+        "Reports & Analytics",
+        "Google Calendar Sync",
+        "Mobile App"
+      ],
+      "baseCost": 65000,
+      "baseDurationDays": 20,
+      "techOptions": [
+        "React + Node.js",
+        "Flutter (Mobile)",
+        "Laravel + Vue.js"
+      ],
+      "previewScreens": [
+        "images/templates/booking-calendar.svg",
+        "images/templates/booking-services.svg",
+        "images/templates/booking-customer.svg"
+      ],
+      "demoUrl": "http://127.0.0.1:8200/demo/booking/",
+      "liveAppUrl": "http://127.0.0.1:8200/app/login/?demo=booking&username=admin%40booking.demo&password=demo123&autologin=1",
+      "category": "Healthcare & Services"
+    },
+    {
+      "id": "crm-business",
+      "name": "Business CRM System",
+      "industry": "Sales & Marketing",
+      "tagline": "Customer relationship management for growing businesses",
+      "description": "Complete CRM with lead management, pipeline tracking, email integration, and analytics. Ideal for sales teams and B2B companies.",
+      "features": [
+        "Lead Management",
+        "Contact Database",
+        "Sales Pipeline",
+        "Deal Tracking",
+        "Email Integration",
+        "Task Management",
+        "Activity Timeline",
+        "Quotes & Proposals",
+        "Reports & Forecasting",
+        "Mobile App",
+        "API Integration"
+      ],
+      "baseCost": 95000,
+      "baseDurationDays": 28,
+      "techOptions": [
+        "React + Node.js",
+        "Laravel + Vue.js",
+        "Django + React"
+      ],
+      "previewScreens": [
+        "images/templates/crm-pipeline.svg",
+        "images/templates/crm-contacts.svg",
+        "images/templates/crm-analytics.svg"
+      ],
+      "demoUrl": "http://127.0.0.1:8200/demo/crm/",
+      "liveAppUrl": "http://127.0.0.1:8200/app/login/?demo=crm&username=manager%40crm.demo&password=demo123&autologin=1",
+      "category": "Sales & Marketing"
+    },
+    {
+      "id": "inventory-warehouse",
+      "name": "Inventory & Warehouse Management",
+      "industry": "Logistics & Supply Chain",
+      "tagline": "Complete inventory tracking and warehouse management",
+      "description": "Advanced inventory management system with barcode scanning, stock tracking, purchase orders, and warehouse management. Perfect for distributors and manufacturers.",
+      "features": [
+        "Multi-Warehouse Support",
+        "Barcode/QR Scanning",
+        "Stock Tracking",
+        "Purchase Orders",
+        "Sales Orders",
+        "Supplier Management",
+        "Stock Transfers",
+        "Low Stock Alerts",
+        "Batch & Serial Tracking",
+        "Reports & Analytics",
+        "Mobile App"
+      ],
+      "baseCost": 110000,
+      "baseDurationDays": 35,
+      "techOptions": [
+        "React + Node.js",
+        "Flutter (Mobile)",
+        "Laravel + Vue.js"
+      ],
+      "previewScreens": [
+        "images/templates/inventory-warehouse-header.svg",
+        "images/templates/inventory-dashboard.svg",
+        "images/templates/inventory-stock.svg"
+      ],
+      "demoUrl": "http://127.0.0.1:8200/demo/inventory/",
+      "liveAppUrl": "http://127.0.0.1:8200/app/login/?demo=inventory&username=scm%40inventory.demo&password=demo123&autologin=1",
+      "category": "Logistics & Supply Chain"
+    }
+  ],
+  "categories": [
+    "Retail & E-commerce",
+    "Business Management",
+    "Education",
+    "Food & Beverage",
+    "Healthcare & Services",
+    "Sales & Marketing",
+    "Logistics & Supply Chain"
+  ],
+  "industries": [
+    "Retail",
+    "Human Resources",
+    "Education",
+    "Food & Beverage",
+    "Healthcare & Services",
+    "Sales & Marketing",
+    "Logistics & Supply Chain"
+  ]
+}

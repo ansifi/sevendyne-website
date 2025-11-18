@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sevendyne App Platform Marketplace</title>
+    <meta name="description" content="Explore Sevendyne's open modules you can self-host for free, with optional managed launches and rapid customization services.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html" style="text-decoration: none; color: inherit;">Sevendyne</a></h1>
+                <p class="tagline">Sevendyne Consultancy Services LLP</p>
+            </div>
+            <nav class="nav">
+                <a href="projects.html">Projects Worked</a>
+                <a href="about.html">About</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#booking">Schedule</a>
+                <a class="featured-link" href="contact.html">Request Support</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>App Solutions</h1>
+            <p>Self-host Sevendyne modules for free, then tap our team for managed rollouts and integrations</p>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label for="industry-filter">Industry:</label>
+                    <select id="industry-filter">
+                        <option value="all">All Industries</option>
+                    </select>
+                </div>
+                
+                <button class="btn-reset" onclick="resetFilters()">Reset Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Templates Grid -->
+    <section class="templates-section">
+        <div class="container">
+            <div id="templates-grid" class="templates-grid">
+                <!-- Templates will be loaded here by JavaScript -->
+            </div>
+            
+            <div id="no-results" class="no-results" style="display: none;">
+                <h3>No templates found</h3>
+                <p>Try adjusting your filters or <a href="index.htmlcontact.html">request a guided demo</a> with the Sevendyne team.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Need guidance selecting the right template?</h2>
+            <p>Book a strategy session and we’ll help you create an account, deploy client workspaces, and scope managed services.</p>
+            <div class="cta-buttons">
+                <a href="index.html#schedule-call" class="btn-primary-white">Book Strategy Call</a>
+                <a href="index.htmlcontact.html" class="btn-secondary-white">Request Account Access</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Sevendyne</h4>
+                    <p>Launch-ready app solutions with end-to-end implementation.</p>
+                    <p>Pick a module, tailor the workflows, deploy in weeks.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html#services">App Solutions</a></li>
+                        <li><a href="services.html">All Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="index.html#schedule-call">Schedule a Call</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="mailto:hr@sevendyne.com">hr@sevendyne.com</a></li>
+                        <li><a href="https://calendly.com/sevendyne/30min" target="_blank" rel="noopener">Book on Calendly</a></li>
+                        <li><a href="https://wa.me/919544139564" target="_blank" rel="noopener">WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sevendyne Consultancy Services LLP. All rights reserved. | Brand: <a href="https://Sevendyne.com">Sevendyne.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="currency-converter.js"></script>
+    <script src="script.js"></script>
+    <script src="solutions.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,84 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#faf5ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e9d5ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+  
+  <!-- Header Bar -->
+  <rect x="0" y="0" width="800" height="60" fill="#581c87"/>
+  <text x="30" y="38" font-family="Arial, sans-serif" font-size="20" fill="white" font-weight="bold">CRM Pipeline</text>
+  <circle cx="750" cy="30" r="15" fill="#a855f7"/>
+  <text x="750" y="35" font-family="Arial" font-size="12" fill="white" text-anchor="middle">📊</text>
+  
+  <!-- Pipeline Columns -->
+  <!-- Leads -->
+  <rect x="30" y="80" width="150" height="380" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="30" y="80" width="150" height="40" rx="8" fill="#f3e8ff"/>
+  <text x="105" y="105" font-family="Arial" font-size="14" fill="#581c87" text-anchor="middle" font-weight="bold">Leads (12)</text>
+  
+  <!-- Lead Cards -->
+  <rect x="45" y="135" width="120" height="70" rx="6" fill="#faf5ff" stroke="#c084fc" stroke-width="1"/>
+  <text x="55" y="155" font-family="Arial" font-size="12" fill="#1e293b" font-weight="bold">Acme Corp</text>
+  <text x="55" y="175" font-family="Arial" font-size="10" fill="#64748b">$50,000</text>
+  <text x="55" y="190" font-family="Arial" font-size="9" fill="#64748b">Contact: John Doe</text>
+  
+  <rect x="45" y="215" width="120" height="70" rx="6" fill="#faf5ff" stroke="#c084fc" stroke-width="1"/>
+  <text x="55" y="235" font-family="Arial" font-size="12" fill="#1e293b" font-weight="bold">TechStart Inc</text>
+  <text x="55" y="255" font-family="Arial" font-size="10" fill="#64748b">$30,000</text>
+  <text x="55" y="270" font-family="Arial" font-size="9" fill="#64748b">Contact: Jane Smith</text>
+  
+  <!-- Qualified -->
+  <rect x="200" y="80" width="150" height="380" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="200" y="80" width="150" height="40" rx="8" fill="#e9d5ff"/>
+  <text x="275" y="105" font-family="Arial" font-size="14" fill="#581c87" text-anchor="middle" font-weight="bold">Qualified (8)</text>
+  
+  <rect x="215" y="135" width="120" height="70" rx="6" fill="#faf5ff" stroke="#a855f7" stroke-width="1"/>
+  <text x="225" y="155" font-family="Arial" font-size="12" fill="#1e293b" font-weight="bold">Global Systems</text>
+  <text x="225" y="175" font-family="Arial" font-size="10" fill="#64748b">$75,000</text>
+  <text x="225" y="190" font-family="Arial" font-size="9" fill="#64748b">Contact: Mike Lee</text>
+  
+  <!-- Proposal -->
+  <rect x="370" y="80" width="150" height="380" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="370" y="80" width="150" height="40" rx="8" fill="#ddd6fe"/>
+  <text x="445" y="105" font-family="Arial" font-size="14" fill="#581c87" text-anchor="middle" font-weight="bold">Proposal (5)</text>
+  
+  <rect x="385" y="135" width="120" height="70" rx="6" fill="#faf5ff" stroke="#9333ea" stroke-width="1"/>
+  <text x="395" y="155" font-family="Arial" font-size="12" fill="#1e293b" font-weight="bold">Enterprise Co</text>
+  <text x="395" y="175" font-family="Arial" font-size="10" fill="#64748b">$120,000</text>
+  <text x="395" y="190" font-family="Arial" font-size="9" fill="#64748b">Contact: Sarah Kim</text>
+  
+  <rect x="385" y="215" width="120" height="70" rx="6" fill="#faf5ff" stroke="#9333ea" stroke-width="1"/>
+  <text x="395" y="235" font-family="Arial" font-size="12" fill="#1e293b" font-weight="bold">Mega Corp</text>
+  <text x="395" y="255" font-family="Arial" font-size="10" fill="#64748b">$95,000</text>
+  <text x="395" y="270" font-family="Arial" font-size="9" fill="#64748b">Contact: David Park</text>
+  
+  <!-- Negotiation -->
+  <rect x="540" y="80" width="150" height="380" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="540" y="80" width="150" height="40" rx="8" fill="#c4b5fd"/>
+  <text x="615" y="105" font-family="Arial" font-size="14" fill="#581c87" text-anchor="middle" font-weight="bold">Negotiation (3)</text>
+  
+  <rect x="555" y="135" width="120" height="70" rx="6" fill="#faf5ff" stroke="#7e22ce" stroke-width="1"/>
+  <text x="565" y="155" font-family="Arial" font-size="12" fill="#1e293b" font-weight="bold">Big Industries</text>
+  <text x="565" y="175" font-family="Arial" font-size="10" fill="#64748b">$200,000</text>
+  <text x="565" y="190" font-family="Arial" font-size="9" fill="#64748b">Contact: Lisa Chen</text>
+  
+  <!-- Won -->
+  <rect x="710" y="80" width="60" height="380" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="710" y="80" width="60" height="40" rx="8" fill="#a78bfa"/>
+  <text x="740" y="105" font-family="Arial" font-size="12" fill="#581c87" text-anchor="middle" font-weight="bold">Won (2)</text>
+  
+  <rect x="715" y="135" width="50" height="50" rx="6" fill="#10b981" opacity="0.2"/>
+  <text x="740" y="165" font-family="Arial" font-size="20" fill="#10b981" text-anchor="middle">✓</text>
+  
+  <!-- Stats Summary -->
+  <rect x="30" y="480" width="740" height="20" rx="4" fill="white" opacity="0.9"/>
+  <text x="50" y="495" font-family="Arial" font-size="11" fill="#64748b">Total Pipeline Value:</text>
+  <text x="200" y="495" font-family="Arial" font-size="13" fill="#581c87" font-weight="bold">$570,000</text>
+  <text x="400" y="495" font-family="Arial" font-size="11" fill="#64748b">Conversion Rate:</text>
+  <text x="520" y="495" font-family="Arial" font-size="13" fill="#581c87" font-weight="bold">6.7%</text>
+</svg>

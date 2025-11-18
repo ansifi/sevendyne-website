@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workspace Provisioned | Sevendyne</title>
+    <meta name="description" content="Workspace provisioning summary for Sevendyne clients.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="account-page">
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Sevendyne</h1>
+                <p class="tagline">Sevendyne Consultancy Services LLP</p>
+            </div>
+            <nav class="nav">
+                <a href="projects.html">Projects Worked</a>
+                <a href="about.html">About</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#booking">Schedule</a>
+                <a class="featured-link" href="contact.html">Request Support</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="account-hero">
+        <div class="container">
+            <h1>Your Workspace Is Ready</h1>
+            <p>Review the details below. Share the credentials with your team and follow the next steps to go live.</p>
+        </div>
+    </section>
+
+    <section class="account-form-section">
+        <div class="container">
+            <div class="account-form-card workspace-panel">
+                <div class="workspace-summary">
+                    <h2 id="workspace-name">Workspace</h2>
+                    <p class="workspace-id">
+                        <strong>Slug:</strong> <span id="workspace-slug">—</span> |
+                        <strong>Subdomain:</strong> <span id="workspace-subdomain">—</span>
+                    </p>
+                </div>
+
+                <div class="workspace-credentials">
+                    <h3>Credentials & Access</h3>
+                    <div class="credential-grid">
+                        <div class="credential-card">
+                            <span class="credential-label">API Key</span>
+                            <code id="workspace-api-key">—</code>
+                            <button class="btn btn-secondary copy-btn" data-target="workspace-api-key">Copy</button>
+                        </div>
+                        <div class="credential-card">
+                            <span class="credential-label">Suggested Domain</span>
+                            <code id="workspace-domain">—</code>
+                        </div>
+                        <div class="credential-card">
+                            <span class="credential-label">Workspace UUID</span>
+                            <code id="workspace-uuid">—</code>
+                        </div>
+                        <div class="credential-card">
+                            <span class="credential-label">Owner Username</span>
+                            <code id="workspace-owner-username">—</code>
+                        </div>
+                        <div class="credential-card">
+                            <span class="credential-label">Owner Password</span>
+                            <code id="workspace-owner-password">—</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="workspace-next-steps">
+                    <h3>Next Steps</h3>
+                    <ol id="workspace-next-steps">
+                        <li>Invite your team to review the launch checklist.</li>
+                        <li>Contact us via Calendly to schedule a managed rollout, if needed.</li>
+                        <li>Map a custom domain once your workspace is branded.</li>
+                    </ol>
+                </div>
+
+                <div class="workspace-actions">
+                    <a id="workspace-login-action" class="btn btn-primary" target="_blank" rel="noopener" style="display: none;">Open Workspace Login</a>
+                    <a href="https://calendly.com/sevendyne/30min" class="btn btn-primary" target="_blank" rel="noopener">Book Onboarding Call</a>
+                    <a href="index.html#schedule-call" class="btn btn-secondary">Back to Homepage</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Sevendyne</h4>
+                    <p>Launch-ready app solutions with end-to-end implementation.</p>
+                    <p>Pick a module, tailor the workflows, deploy in weeks.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html#templates">App Solutions</a></li>
+                        <li><a href="index.html#schedule-call">Schedule a Call</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="mailto:hr@sevendyne.com">hr@sevendyne.com</a></li>
+                        <li><a href="https://calendly.com/sevendyne/30min" target="_blank" rel="noopener">Book on Calendly</a></li>
+                        <li><a href="https://wa.me/919544139564" target="_blank" rel="noopener">WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sevendyne Consultancy Services LLP. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="workspace-dashboard.js"></script>
+</body>
+</html>
+

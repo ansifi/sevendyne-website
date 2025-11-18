@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Direct Image Test</title>
+    <style>
+        body { padding: 2rem; font-family: Arial; }
+        .test { margin: 2rem 0; border: 2px solid #ccc; padding: 1rem; }
+        img { max-width: 100%; border: 2px solid blue; }
+    </style>
+</head>
+<body>
+    <h1>Testing Restaurant Header Image</h1>
+    
+    <div class="test">
+        <h2>Test 1: Direct path</h2>
+        <img src="images/templates/restaurant-ordering-header.svg" 
+             alt="Direct" 
+             onerror="this.style.border='5px solid red'; console.error('FAILED:', this.src);">
+    </div>
+    
+    <div class="test">
+        <h2>Test 2: With cache busting</h2>
+        <img src="images/templates/restaurant-ordering-header.svg?v=1762938456256" 
+             alt="With cache" 
+             onerror="this.style.border='5px solid red'; console.error('FAILED:', this.src);">
+    </div>
+    
+    <script>
+        console.log('Testing images...');
+        document.querySelectorAll('img').forEach((img, i) => {
+            img.addEventListener('load', () => console.log(`Image ${i+1} loaded:`, img.src));
+            img.addEventListener('error', () => console.error(`Image ${i+1} FAILED:`, img.src));
+        });
+    </script>
+</body>
+</html>

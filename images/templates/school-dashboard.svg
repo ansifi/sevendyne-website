@@ -1,0 +1,97 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fef3c7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fde68a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+  
+  <!-- Header Bar -->
+  <rect x="0" y="0" width="800" height="60" fill="#78350f"/>
+  <text x="30" y="38" font-family="Arial, sans-serif" font-size="20" fill="white" font-weight="bold">School Management</text>
+  <circle cx="750" cy="30" r="15" fill="#f59e0b"/>
+  <text x="750" y="35" font-family="Arial" font-size="12" fill="white" text-anchor="middle">🎓</text>
+  
+  <!-- Stats Cards -->
+  <rect x="30" y="80" width="160" height="100" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="40" y="105" font-family="Arial" font-size="12" fill="#64748b">Total Students</text>
+  <text x="40" y="135" font-family="Arial" font-size="28" fill="#1e293b" font-weight="bold">1,245</text>
+  <rect x="40" y="145" width="140" height="4" rx="2" fill="#f59e0b" opacity="0.3"/>
+  
+  <rect x="210" y="80" width="160" height="100" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="220" y="105" font-family="Arial" font-size="12" fill="#64748b">Teachers</text>
+  <text x="220" y="135" font-family="Arial" font-size="28" fill="#1e293b" font-weight="bold">68</text>
+  <rect x="220" y="145" width="140" height="4" rx="2" fill="#3b82f6" opacity="0.3"/>
+  
+  <rect x="390" y="80" width="160" height="100" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="400" y="105" font-family="Arial" font-size="12" fill="#64748b">Classes</text>
+  <text x="400" y="135" font-family="Arial" font-size="28" fill="#1e293b" font-weight="bold">42</text>
+  <rect x="400" y="145" width="140" height="4" rx="2" fill="#10b981" opacity="0.3"/>
+  
+  <rect x="570" y="80" width="160" height="100" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="580" y="105" font-family="Arial" font-size="12" fill="#64748b">Attendance</text>
+  <text x="580" y="135" font-family="Arial" font-size="28" fill="#1e293b" font-weight="bold">94%</text>
+  <rect x="580" y="145" width="140" height="4" rx="2" fill="#8b5cf6" opacity="0.3"/>
+  
+  <!-- Student List -->
+  <rect x="30" y="200" width="360" height="250" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="50" y="230" font-family="Arial" font-size="16" fill="#1e293b" font-weight="bold">Recent Students</text>
+  
+  <!-- Student Cards -->
+  <rect x="50" y="250" width="320" height="60" rx="6" fill="#fef3c7" stroke="#fde68a" stroke-width="1"/>
+  <circle cx="80" cy="280" r="20" fill="#f59e0b"/>
+  <text x="80" y="286" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">AS</text>
+  <text x="110" y="275" font-family="Arial" font-size="13" fill="#1e293b" font-weight="bold">Alice Smith</text>
+  <text x="110" y="295" font-family="Arial" font-size="11" fill="#64748b">Grade 10 - Class A</text>
+  <rect x="300" y="270" width="60" height="20" rx="10" fill="#10b981" opacity="0.2"/>
+  <text x="330" y="283" font-family="Arial" font-size="10" fill="#10b981" text-anchor="middle">Present</text>
+  
+  <rect x="50" y="320" width="320" height="60" rx="6" fill="#fef3c7" stroke="#fde68a" stroke-width="1"/>
+  <circle cx="80" cy="350" r="20" fill="#3b82f6"/>
+  <text x="80" y="356" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">BJ</text>
+  <text x="110" y="345" font-family="Arial" font-size="13" fill="#1e293b" font-weight="bold">Bob Johnson</text>
+  <text x="110" y="365" font-family="Arial" font-size="11" fill="#64748b">Grade 9 - Class B</text>
+  <rect x="300" y="340" width="60" height="20" rx="10" fill="#10b981" opacity="0.2"/>
+  <text x="330" y="353" font-family="Arial" font-size="10" fill="#10b981" text-anchor="middle">Present</text>
+  
+  <rect x="50" y="390" width="320" height="60" rx="6" fill="#fef3c7" stroke="#fde68a" stroke-width="1"/>
+  <circle cx="80" cy="420" r="20" fill="#8b5cf6"/>
+  <text x="80" y="426" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">CW</text>
+  <text x="110" y="415" font-family="Arial" font-size="13" fill="#1e293b" font-weight="bold">Carol White</text>
+  <text x="110" y="435" font-family="Arial" font-size="11" fill="#64748b">Grade 11 - Class C</text>
+  <rect x="300" y="405" width="60" height="20" rx="10" fill="#f59e0b" opacity="0.2"/>
+  <text x="330" y="418" font-family="Arial" font-size="10" fill="#f59e0b" text-anchor="middle">Absent</text>
+  
+  <!-- Class Schedule -->
+  <rect x="410" y="200" width="360" height="250" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="590" y="230" font-family="Arial" font-size="16" fill="#1e293b" font-weight="bold" text-anchor="middle">Today's Schedule</text>
+  
+  <!-- Schedule Items -->
+  <rect x="430" y="250" width="320" height="50" rx="6" fill="#fef3c7" stroke="#fde68a" stroke-width="1"/>
+  <text x="450" y="270" font-family="Arial" font-size="12" fill="#78350f" font-weight="bold">08:00 - 09:00</text>
+  <text x="450" y="290" font-family="Arial" font-size="13" fill="#1e293b" font-weight="bold">Mathematics</text>
+  <text x="600" y="280" font-family="Arial" font-size="11" fill="#64748b">Room 101</text>
+  
+  <rect x="430" y="310" width="320" height="50" rx="6" fill="#fef3c7" stroke="#fde68a" stroke-width="1"/>
+  <text x="450" y="330" font-family="Arial" font-size="12" fill="#78350f" font-weight="bold">09:15 - 10:15</text>
+  <text x="450" y="350" font-family="Arial" font-size="13" fill="#1e293b" font-weight="bold">Science</text>
+  <text x="600" y="340" font-family="Arial" font-size="11" fill="#64748b">Lab 205</text>
+  
+  <rect x="430" y="370" width="320" height="50" rx="6" fill="#fef3c7" stroke="#fde68a" stroke-width="1"/>
+  <text x="450" y="390" font-family="Arial" font-size="12" fill="#78350f" font-weight="bold">10:30 - 11:30</text>
+  <text x="450" y="410" font-family="Arial" font-size="13" fill="#1e293b" font-weight="bold">English</text>
+  <text x="600" y="400" font-family="Arial" font-size="11" fill="#64748b">Room 102</text>
+  
+  <!-- Quick Actions -->
+  <rect x="410" y="460" width="100" height="35" rx="6" fill="#f59e0b"/>
+  <text x="460" y="482" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">Add Student</text>
+  
+  <rect x="530" y="460" width="100" height="35" rx="6" fill="#3b82f6"/>
+  <text x="580" y="482" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">Attendance</text>
+  
+  <rect x="650" y="460" width="100" height="35" rx="6" fill="#10b981"/>
+  <text x="700" y="482" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">Reports</text>
+</svg>

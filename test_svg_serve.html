@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head><title>SVG Test</title></head>
+<body>
+<h1>Testing SVG Loading</h1>
+<div style="border:2px solid red; padding:1rem;">
+<h2>Method 1: img tag</h2>
+<img src="images/templates/restaurant-ordering-header.svg" 
+     alt="Test" 
+     style="width:400px;border:2px solid blue;"
+     onload="console.log('IMG LOADED:', this.src)"
+     onerror="console.error('IMG ERROR:', this.src)">
+</div>
+
+<div style="border:2px solid red; padding:1rem; margin-top:2rem;">
+<h2>Method 2: object tag</h2>
+<object data="images/templates/restaurant-ordering-header.svg" 
+        type="image/svg+xml" 
+        style="width:400px;border:2px solid green;">
+  <p>SVG not supported</p>
+</object>
+</div>
+
+<div style="border:2px solid red; padding:1rem; margin-top:2rem;">
+<h2>Method 3: embed tag</h2>
+<embed src="images/templates/restaurant-ordering-header.svg" 
+       type="image/svg+xml" 
+       style="width:400px;border:2px solid purple;">
+</div>
+
+<script>
+console.log('Testing SVG load...');
+</script>
+</body>
+</html>

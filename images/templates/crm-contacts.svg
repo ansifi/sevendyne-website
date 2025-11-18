@@ -1,0 +1,87 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#faf5ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e9d5ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+  
+  <!-- Header Bar -->
+  <rect x="0" y="0" width="800" height="60" fill="#581c87"/>
+  <text x="30" y="38" font-family="Arial, sans-serif" font-size="20" fill="white" font-weight="bold">Contact Management</text>
+  <circle cx="750" cy="30" r="15" fill="#a855f7"/>
+  <text x="750" y="35" font-family="Arial" font-size="12" fill="white" text-anchor="middle">👥</text>
+  
+  <!-- Search and Add -->
+  <rect x="30" y="80" width="400" height="40" rx="6" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="50" y="105" font-family="Arial" font-size="13" fill="#64748b">🔍 Search contacts...</text>
+  
+  <rect x="450" y="80" width="120" height="40" rx="6" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="510" y="105" font-family="Arial" font-size="13" fill="#64748b" text-anchor="middle">Filter ▼</text>
+  
+  <rect x="590" y="80" width="140" height="40" rx="6" fill="#a855f7"/>
+  <text x="660" y="105" font-family="Arial" font-size="13" fill="white" text-anchor="middle" font-weight="bold">+ Add Contact</text>
+  
+  <!-- Contacts List -->
+  <rect x="30" y="140" width="740" height="320" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  
+  <!-- Contact 1 -->
+  <rect x="50" y="160" width="700" height="70" rx="6" fill="#faf5ff" stroke="#e2e8f0"/>
+  <circle cx="90" cy="195" r="20" fill="#a855f7"/>
+  <text x="90" y="201" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">JD</text>
+  <text x="130" y="180" font-family="Arial" font-size="14" fill="#1e293b" font-weight="bold">John Doe</text>
+  <text x="130" y="200" font-family="Arial" font-size="11" fill="#64748b">CEO, Acme Corporation</text>
+  <text x="130" y="215" font-family="Arial" font-size="11" fill="#64748b">john.doe@acme.com • +91 98765 43210</text>
+  <rect x="600" y="175" width="60" height="25" rx="4" fill="#a855f7" opacity="0.1"/>
+  <text x="630" y="191" font-family="Arial" font-size="10" fill="#a855f7" text-anchor="middle">Hot Lead</text>
+  <rect x="680" y="175" width="50" height="25" rx="4" fill="#3b82f6" opacity="0.1"/>
+  <text x="705" y="191" font-family="Arial" font-size="10" fill="#3b82f6" text-anchor="middle">View</text>
+  
+  <!-- Contact 2 -->
+  <rect x="50" y="240" width="700" height="70" rx="6" fill="#faf5ff" stroke="#e2e8f0"/>
+  <circle cx="90" cy="275" r="20" fill="#3b82f6"/>
+  <text x="90" y="281" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">JS</text>
+  <text x="130" y="260" font-family="Arial" font-size="14" fill="#1e293b" font-weight="bold">Jane Smith</text>
+  <text x="130" y="280" font-family="Arial" font-size="11" fill="#64748b">Director, TechStart Inc</text>
+  <text x="130" y="295" font-family="Arial" font-size="11" fill="#64748b">jane.smith@techstart.com • +91 98765 43211</text>
+  <rect x="600" y="255" width="60" height="25" rx="4" fill="#10b981" opacity="0.1"/>
+  <text x="630" y="271" font-family="Arial" font-size="10" fill="#10b981" text-anchor="middle">Customer</text>
+  <rect x="680" y="255" width="50" height="25" rx="4" fill="#3b82f6" opacity="0.1"/>
+  <text x="705" y="271" font-family="Arial" font-size="10" fill="#3b82f6" text-anchor="middle">View</text>
+  
+  <!-- Contact 3 -->
+  <rect x="50" y="320" width="700" height="70" rx="6" fill="#faf5ff" stroke="#e2e8f0"/>
+  <circle cx="90" cy="355" r="20" fill="#8b5cf6"/>
+  <text x="90" y="361" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">MJ</text>
+  <text x="130" y="340" font-family="Arial" font-size="14" fill="#1e293b" font-weight="bold">Mike Johnson</text>
+  <text x="130" y="360" font-family="Arial" font-size="11" fill="#64748b">Manager, Global Systems</text>
+  <text x="130" y="375" font-family="Arial" font-size="11" fill="#64748b">mike.j@globalsys.com • +91 98765 43212</text>
+  <rect x="600" y="335" width="60" height="25" rx="4" fill="#f59e0b" opacity="0.1"/>
+  <text x="630" y="351" font-family="Arial" font-size="10" fill="#f59e0b" text-anchor="middle">Prospect</text>
+  <rect x="680" y="335" width="50" height="25" rx="4" fill="#3b82f6" opacity="0.1"/>
+  <text x="705" y="351" font-family="Arial" font-size="10" fill="#3b82f6" text-anchor="middle">View</text>
+  
+  <!-- Contact 4 -->
+  <rect x="50" y="400" width="700" height="70" rx="6" fill="#faf5ff" stroke="#e2e8f0"/>
+  <circle cx="90" cy="435" r="20" fill="#10b981"/>
+  <text x="90" y="441" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">SK</text>
+  <text x="130" y="420" font-family="Arial" font-size="14" fill="#1e293b" font-weight="bold">Sarah Kim</text>
+  <text x="130" y="440" font-family="Arial" font-size="11" fill="#64748b">VP Sales, Enterprise Co</text>
+  <text x="130" y="455" font-family="Arial" font-size="11" fill="#64748b">sarah.kim@enterprise.com • +91 98765 43213</text>
+  <rect x="600" y="415" width="60" height="25" rx="4" fill="#a855f7" opacity="0.1"/>
+  <text x="630" y="431" font-family="Arial" font-size="10" fill="#a855f7" text-anchor="middle">Hot Lead</text>
+  <rect x="680" y="415" width="50" height="25" rx="4" fill="#3b82f6" opacity="0.1"/>
+  <text x="705" y="431" font-family="Arial" font-size="10" fill="#3b82f6" text-anchor="middle">View</text>
+  
+  <!-- Pagination -->
+  <rect x="600" y="470" width="150" height="30" rx="4" fill="#f1f5f9" stroke="#e2e8f0"/>
+  <text x="610" y="490" font-family="Arial" font-size="11" fill="#64748b">Page 1 of 12</text>
+  <text x="720" y="490" font-family="Arial" font-size="11" fill="#a855f7">Next →</text>
+</svg>
+
+
+
+

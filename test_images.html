@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Test</title>
+    <style>
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .screenshot-item img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Testing 3 Images</h1>
+    <div class="screenshots-grid">
+        <div class="screenshot-item">
+            <img src="images/templates/inventory-dashboard.svg" alt="Image 1">
+        </div>
+        <div class="screenshot-item">
+            <img src="images/templates/inventory-dashboard.svg" alt="Image 2">
+        </div>
+        <div class="screenshot-item">
+            <img src="images/templates/inventory-dashboard.svg" alt="Image 3">
+        </div>
+    </div>
+</body>
+</html>

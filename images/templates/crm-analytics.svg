@@ -1,0 +1,99 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#faf5ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e9d5ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+  
+  <!-- Header Bar -->
+  <rect x="0" y="0" width="800" height="60" fill="#581c87"/>
+  <text x="30" y="38" font-family="Arial, sans-serif" font-size="20" fill="white" font-weight="bold">Sales Analytics</text>
+  <circle cx="750" cy="30" r="15" fill="#a855f7"/>
+  <text x="750" y="35" font-family="Arial" font-size="12" fill="white" text-anchor="middle">📊</text>
+  
+  <!-- Period Selector -->
+  <rect x="30" y="80" width="200" height="40" rx="6" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="50" y="105" font-family="Arial" font-size="13" fill="#64748b">📅 November 2024</text>
+  
+  <!-- Key Metrics -->
+  <rect x="250" y="80" width="140" height="80" rx="6" fill="white" stroke="#e2e8f0"/>
+  <text x="260" y="105" font-family="Arial" font-size="11" fill="#64748b">Total Revenue</text>
+  <text x="260" y="135" font-family="Arial" font-size="22" fill="#581c87" font-weight="bold">₹57,00,000</text>
+  <text x="260" y="150" font-family="Arial" font-size="10" fill="#10b981">↑ 12% vs last month</text>
+  
+  <rect x="410" y="80" width="140" height="80" rx="6" fill="white" stroke="#e2e8f0"/>
+  <text x="420" y="105" font-family="Arial" font-size="11" fill="#64748b">Deals Closed</text>
+  <text x="420" y="135" font-family="Arial" font-size="22" fill="#581c87" font-weight="bold">42</text>
+  <text x="420" y="150" font-family="Arial" font-size="10" fill="#10b981">↑ 8% vs last month</text>
+  
+  <rect x="570" y="80" width="140" height="80" rx="6" fill="white" stroke="#e2e8f0"/>
+  <text x="580" y="105" font-family="Arial" font-size="11" fill="#64748b">Conversion Rate</text>
+  <text x="580" y="135" font-family="Arial" font-size="22" fill="#581c87" font-weight="bold">6.7%</text>
+  <text x="580" y="150" font-family="Arial" font-size="10" fill="#f59e0b">↓ 0.5% vs last month</text>
+  
+  <!-- Chart Area -->
+  <rect x="30" y="180" width="500" height="280" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="280" y="210" font-family="Arial" font-size="16" fill="#1e293b" font-weight="bold" text-anchor="middle">Revenue Trend</text>
+  
+  <!-- Chart Bars -->
+  <rect x="80" y="250" width="50" height="150" rx="4" fill="#a855f7"/>
+  <text x="105" y="415" font-family="Arial" font-size="10" fill="#64748b" text-anchor="middle">Week 1</text>
+  
+  <rect x="150" y="220" width="50" height="180" rx="4" fill="#8b5cf6"/>
+  <text x="175" y="415" font-family="Arial" font-size="10" fill="#64748b" text-anchor="middle">Week 2</text>
+  
+  <rect x="220" y="240" width="50" height="160" rx="4" fill="#a855f7"/>
+  <text x="245" y="415" font-family="Arial" font-size="10" fill="#64748b" text-anchor="middle">Week 3</text>
+  
+  <rect x="290" y="200" width="50" height="200" rx="4" fill="#9333ea"/>
+  <text x="315" y="415" font-family="Arial" font-size="10" fill="#64748b" text-anchor="middle">Week 4</text>
+  
+  <rect x="360" y="230" width="50" height="170" rx="4" fill="#8b5cf6"/>
+  <text x="385" y="415" font-family="Arial" font-size="10" fill="#64748b" text-anchor="middle">Week 5</text>
+  
+  <!-- Y-axis labels -->
+  <text x="70" y="250" font-family="Arial" font-size="9" fill="#64748b">₹15L</text>
+  <text x="70" y="300" font-family="Arial" font-size="9" fill="#64748b">₹12L</text>
+  <text x="70" y="350" font-family="Arial" font-size="9" fill="#64748b">₹9L</text>
+  <text x="70" y="400" font-family="Arial" font-size="9" fill="#64748b">₹6L</text>
+  
+  <!-- Top Deals -->
+  <rect x="550" y="180" width="220" height="280" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="660" y="210" font-family="Arial" font-size="16" fill="#1e293b" font-weight="bold" text-anchor="middle">Top Deals</text>
+  
+  <!-- Deal 1 -->
+  <rect x="570" y="230" width="180" height="50" rx="6" fill="#faf5ff" stroke="#a855f7" stroke-width="1"/>
+  <text x="580" y="250" font-family="Arial" font-size="12" fill="#1e293b" font-weight="bold">Enterprise Co</text>
+  <text x="580" y="270" font-family="Arial" font-size="11" fill="#64748b">₹12,00,000</text>
+  <rect x="700" y="245" width="40" height="20" rx="10" fill="#10b981" opacity="0.2"/>
+  <text x="720" y="258" font-family="Arial" font-size="9" fill="#10b981" text-anchor="middle">Won</text>
+  
+  <!-- Deal 2 -->
+  <rect x="570" y="290" width="180" height="50" rx="6" fill="#faf5ff" stroke="#a855f7" stroke-width="1"/>
+  <text x="580" y="310" font-family="Arial" font-size="12" fill="#1e293b" font-weight="bold">Mega Corp</text>
+  <text x="580" y="330" font-family="Arial" font-size="11" fill="#64748b">₹9,50,000</text>
+  <rect x="700" y="305" width="40" height="20" rx="10" fill="#10b981" opacity="0.2"/>
+  <text x="720" y="318" font-family="Arial" font-size="9" fill="#10b981" text-anchor="middle">Won</text>
+  
+  <!-- Deal 3 -->
+  <rect x="570" y="350" width="180" height="50" rx="6" fill="#faf5ff" stroke="#a855f7" stroke-width="1"/>
+  <text x="580" y="370" font-family="Arial" font-size="12" fill="#1e293b" font-weight="bold">Global Systems</text>
+  <text x="580" y="390" font-family="Arial" font-size="11" fill="#64748b">₹7,50,000</text>
+  <rect x="700" y="365" width="40" height="20" rx="10" fill="#f59e0b" opacity="0.2"/>
+  <text x="720" y="378" font-family="Arial" font-size="9" fill="#f59e0b" text-anchor="middle">Pending</text>
+  
+  <!-- Deal 4 -->
+  <rect x="570" y="410" width="180" height="50" rx="6" fill="#faf5ff" stroke="#a855f7" stroke-width="1"/>
+  <text x="580" y="430" font-family="Arial" font-size="12" fill="#1e293b" font-weight="bold">TechStart Inc</text>
+  <text x="580" y="450" font-family="Arial" font-size="11" fill="#64748b">₹6,00,000</text>
+  <rect x="700" y="425" width="40" height="20" rx="10" fill="#10b981" opacity="0.2"/>
+  <text x="720" y="438" font-family="Arial" font-size="9" fill="#10b981" text-anchor="middle">Won</text>
+</svg>
+
+
+
+

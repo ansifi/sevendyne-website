@@ -1,0 +1,32 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0fdf4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#bbf7d0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+  
+  <!-- Header Badge -->
+  <rect x="550" y="30" width="220" height="35" rx="17" fill="#14532d"/>
+  <text x="660" y="52" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="bold">Logistics &amp; Supply Chain</text>
+  
+  <!-- Icon/Image Area -->
+  <rect x="300" y="100" width="200" height="150" rx="12" fill="white" opacity="0.3"/>
+  <text x="400" y="190" font-family="Arial" font-size="80" fill="white" text-anchor="middle" opacity="0.8">📦</text>
+  
+  <!-- Title -->
+  <text x="400" y="300" font-family="Arial, sans-serif" font-size="48" fill="#1e293b" text-anchor="middle" font-weight="bold">Inventory &amp; Warehouse</text>
+  
+  <!-- Subtitle -->
+  <text x="400" y="340" font-family="Arial, sans-serif" font-size="24" fill="#64748b" text-anchor="middle">Complete Inventory Tracking System</text>
+  
+  <!-- Features -->
+  <text x="400" y="380" font-family="Arial, sans-serif" font-size="16" fill="#64748b" text-anchor="middle">Multi-Warehouse • Barcode Scanning • Stock Tracking • Purchase Orders</text>
+</svg>
+
+
+
+

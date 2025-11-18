@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Test Image</title></head>
+<body>
+<h1>Testing Restaurant Header Image</h1>
+<img src="images/templates/restaurant-ordering-header.svg?v=123" 
+     alt="Test" 
+     style="width:800px;border:2px solid red;"
+     onerror="console.error('Image failed:', this.src); this.style.border='5px solid red';">
+<script>
+document.querySelector('img').addEventListener('load', () => console.log('Image loaded!'));
+document.querySelector('img').addEventListener('error', (e) => console.error('Image error:', e));
+</script>
+</body>
+</html>

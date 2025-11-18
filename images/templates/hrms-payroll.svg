@@ -1,0 +1,102 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+  
+  <!-- Header Bar -->
+  <rect x="0" y="0" width="800" height="60" fill="#1e293b"/>
+  <text x="30" y="38" font-family="Arial, sans-serif" font-size="20" fill="white" font-weight="bold">Payroll Management</text>
+  <circle cx="750" cy="30" r="15" fill="#8b5cf6"/>
+  <text x="750" y="35" font-family="Arial" font-size="12" fill="white" text-anchor="middle">₹</text>
+  
+  <!-- Period Selector -->
+  <rect x="30" y="80" width="200" height="40" rx="6" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="50" y="105" font-family="Arial" font-size="13" fill="#64748b">📅 November 2024</text>
+  
+  <!-- Summary Cards -->
+  <rect x="250" y="80" width="150" height="80" rx="6" fill="white" stroke="#e2e8f0"/>
+  <text x="260" y="105" font-family="Arial" font-size="11" fill="#64748b">Total Payroll</text>
+  <text x="260" y="135" font-family="Arial" font-size="24" fill="#1e293b" font-weight="bold">₹12,45,000</text>
+  
+  <rect x="420" y="80" width="150" height="80" rx="6" fill="white" stroke="#e2e8f0"/>
+  <text x="430" y="105" font-family="Arial" font-size="11" fill="#64748b">Employees</text>
+  <text x="430" y="135" font-family="Arial" font-size="24" fill="#1e293b" font-weight="bold">245</text>
+  
+  <rect x="590" y="80" width="150" height="80" rx="6" fill="white" stroke="#e2e8f0"/>
+  <text x="600" y="105" font-family="Arial" font-size="11" fill="#64748b">Avg. Salary</text>
+  <text x="600" y="135" font-family="Arial" font-size="24" fill="#1e293b" font-weight="bold">₹50,816</text>
+  
+  <!-- Payroll Table -->
+  <rect x="30" y="180" width="740" height="280" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  
+  <!-- Table Header -->
+  <rect x="50" y="195" width="700" height="35" fill="#f1f5f9"/>
+  <text x="70" y="217" font-family="Arial" font-size="12" fill="#64748b" font-weight="bold">Employee</text>
+  <text x="250" y="217" font-family="Arial" font-size="12" fill="#64748b" font-weight="bold">Basic</text>
+  <text x="350" y="217" font-family="Arial" font-size="12" fill="#64748b" font-weight="bold">Allowances</text>
+  <text x="480" y="217" font-family="Arial" font-size="12" fill="#64748b" font-weight="bold">Deductions</text>
+  <text x="600" y="217" font-family="Arial" font-size="12" fill="#64748b" font-weight="bold">Net Salary</text>
+  <text x="720" y="217" font-family="Arial" font-size="12" fill="#64748b" font-weight="bold">Status</text>
+  
+  <!-- Table Rows -->
+  <line x1="50" y1="230" x2="750" y2="230" stroke="#e2e8f0"/>
+  <circle cx="80" cy="250" r="15" fill="#3b82f6"/>
+  <text x="80" y="256" font-family="Arial" font-size="11" fill="white" text-anchor="middle" font-weight="bold">JD</text>
+  <text x="110" y="245" font-family="Arial" font-size="12" fill="#1e293b" font-weight="bold">John Doe</text>
+  <text x="110" y="260" font-family="Arial" font-size="10" fill="#64748b">EMP001</text>
+  <text x="250" y="253" font-family="Arial" font-size="11" fill="#1e293b">₹45,000</text>
+  <text x="350" y="253" font-family="Arial" font-size="11" fill="#1e293b">₹8,000</text>
+  <text x="480" y="253" font-family="Arial" font-size="11" fill="#ef4444">₹3,000</text>
+  <text x="600" y="253" font-family="Arial" font-size="12" fill="#1e293b" font-weight="bold">₹50,000</text>
+  <rect x="720" y="240" width="20" height="20" rx="10" fill="#10b981"/>
+  
+  <line x1="50" y1="280" x2="750" y2="280" stroke="#e2e8f0"/>
+  <circle cx="80" cy="300" r="15" fill="#8b5cf6"/>
+  <text x="80" y="306" font-family="Arial" font-size="11" fill="white" text-anchor="middle" font-weight="bold">JS</text>
+  <text x="110" y="295" font-family="Arial" font-size="12" fill="#1e293b" font-weight="bold">Jane Smith</text>
+  <text x="110" y="310" font-family="Arial" font-size="10" fill="#64748b">EMP002</text>
+  <text x="250" y="303" font-family="Arial" font-size="11" fill="#1e293b">₹60,000</text>
+  <text x="350" y="303" font-family="Arial" font-size="11" fill="#1e293b">₹10,000</text>
+  <text x="480" y="303" font-family="Arial" font-size="11" fill="#ef4444">₹4,000</text>
+  <text x="600" y="303" font-family="Arial" font-size="12" fill="#1e293b" font-weight="bold">₹66,000</text>
+  <rect x="720" y="290" width="20" height="20" rx="10" fill="#10b981"/>
+  
+  <line x1="50" y1="330" x2="750" y2="330" stroke="#e2e8f0"/>
+  <circle cx="80" cy="350" r="15" fill="#f59e0b"/>
+  <text x="80" y="356" font-family="Arial" font-size="11" fill="white" text-anchor="middle" font-weight="bold">MJ</text>
+  <text x="110" y="345" font-family="Arial" font-size="12" fill="#1e293b" font-weight="bold">Mike Johnson</text>
+  <text x="110" y="360" font-family="Arial" font-size="10" fill="#64748b">EMP003</text>
+  <text x="250" y="353" font-family="Arial" font-size="11" fill="#1e293b">₹55,000</text>
+  <text x="350" y="353" font-family="Arial" font-size="11" fill="#1e293b">₹9,000</text>
+  <text x="480" y="353" font-family="Arial" font-size="11" fill="#ef4444">₹3,500</text>
+  <text x="600" y="353" font-family="Arial" font-size="12" fill="#1e293b" font-weight="bold">₹60,500</text>
+  <rect x="720" y="340" width="20" height="20" rx="10" fill="#f59e0b"/>
+  
+  <line x1="50" y1="380" x2="750" y2="380" stroke="#e2e8f0"/>
+  <circle cx="80" cy="400" r="15" fill="#10b981"/>
+  <text x="80" y="406" font-family="Arial" font-size="11" fill="white" text-anchor="middle" font-weight="bold">SK</text>
+  <text x="110" y="395" font-family="Arial" font-size="12" fill="#1e293b" font-weight="bold">Sarah Kim</text>
+  <text x="110" y="410" font-family="Arial" font-size="10" fill="#64748b">EMP004</text>
+  <text x="250" y="403" font-family="Arial" font-size="11" fill="#1e293b">₹50,000</text>
+  <text x="350" y="403" font-family="Arial" font-size="11" fill="#1e293b">₹8,500</text>
+  <text x="480" y="403" font-family="Arial" font-size="11" fill="#ef4444">₹3,200</text>
+  <text x="600" y="403" font-family="Arial" font-size="12" fill="#1e293b" font-weight="bold">₹55,300</text>
+  <rect x="720" y="390" width="20" height="20" rx="10" fill="#10b981"/>
+  
+  <!-- Actions -->
+  <rect x="30" y="470" width="120" height="30" rx="6" fill="#10b981"/>
+  <text x="90" y="490" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">Process Payroll</text>
+  
+  <rect x="170" y="470" width="100" height="30" rx="6" fill="white" stroke="#e2e8f0"/>
+  <text x="220" y="490" font-family="Arial" font-size="12" fill="#64748b" text-anchor="middle">Export</text>
+  
+  <rect x="290" y="470" width="100" height="30" rx="6" fill="white" stroke="#e2e8f0"/>
+  <text x="340" y="490" font-family="Arial" font-size="12" fill="#64748b" text-anchor="middle">Payslips</text>
+</svg>
+
