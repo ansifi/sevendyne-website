@@ -75,7 +75,7 @@
                     <h2 style="color: #14b8a6; margin-bottom: 1rem;">Submit Your Application</h2>
                     <p style="color: #64748b; margin-bottom: 2rem;">Fill out the form below and attach your resume. We'll review your application and get back to you soon.</p>
                     
-                    <form id="joinForm" class="contact-form" action="https://formspree.io/f/mldoabko" method="POST" enctype="multipart/form-data">
+                    <form id="joinForm" class="contact-form" action="https://formspree.io/f/mldoabko" method="POST">
                         <input type="hidden" name="_subject" value="New Developer Application - Sevendyne">
                         <input type="hidden" name="_cc" value="hr@sevendyne.com">
                         <input type="hidden" name="_captcha" value="false">
@@ -146,10 +146,14 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="resume">Resume/CV *</label>
-                            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
-                            <small style="color: #64748b; font-size: 0.875rem;">Accepted formats: PDF, DOC, DOCX (Max 5MB)</small>
-                            <div id="fileError" style="color: #ef4444; font-size: 0.875rem; margin-top: 0.5rem; display: none;"></div>
+                            <label for="resumeLink">Resume/CV Link *</label>
+                            <input type="url" id="resumeLink" name="resumeLink" required placeholder="https://drive.google.com/file/... or https://yourwebsite.com/resume.pdf">
+                            <small style="color: #64748b; font-size: 0.875rem;">Please provide a link to your resume (Google Drive, Dropbox, LinkedIn, or your website). Make sure the link is publicly accessible.</small>
+                            <div id="resumeLinkError" style="color: #ef4444; font-size: 0.875rem; margin-top: 0.5rem; display: none;"></div>
+                        </div>
+                        
+                        <div class="form-group" style="background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 1rem; margin: 1rem 0;">
+                            <p style="margin: 0; color: #92400e; font-size: 0.9rem;"><strong>Note:</strong> If you prefer to send your resume via email, you can email it directly to <a href="mailto:hr@sevendyne.com?subject=Developer Application&body=Please find my resume attached." style="color: #92400e; text-decoration: underline; font-weight: 600;">hr@sevendyne.com</a> with the subject "Developer Application".</p>
                         </div>
 
                         <div class="form-group">
@@ -241,22 +245,18 @@
             if (joinForm) {
                 const buttonArea = document.getElementById('buttonArea');
                 const submitButton = document.getElementById('submitButton');
-                const resumeInput = document.getElementById('resume');
-                const fileError = document.getElementById('fileError');
+                const resumeLinkInput = document.getElementById('resumeLink');
+                const resumeLinkError = document.getElementById('resumeLinkError');
                 
-                // Validate file size before submission
-                if (resumeInput) {
-                    resumeInput.addEventListener('change', function() {
-                        const file = this.files[0];
-                        if (file) {
-                            const maxSize = 5 * 1024 * 1024; // 5MB
-                            if (file.size > maxSize) {
-                                fileError.textContent = 'File size exceeds 5MB. Please choose a smaller file.';
-                                fileError.style.display = 'block';
-                                this.value = '';
-                            } else {
-                                fileError.style.display = 'none';
-                            }
+                // Validate resume link format
+                if (resumeLinkInput) {
+                    resumeLinkInput.addEventListener('blur', function() {
+                        const link = this.value.trim();
+                        if (link && !link.match(/^https?:\/\/.+/)) {
+                            resumeLinkError.textContent = 'Please enter a valid URL starting with http:// or https://';
+                            resumeLinkError.style.display = 'block';
+                        } else {
+                            resumeLinkError.style.display = 'none';
                         }
                     });
                 }
@@ -264,15 +264,17 @@
                 joinForm.addEventListener('submit', function(e) {
                     e.preventDefault();
                     
-                    // Validate file size again
-                    const file = resumeInput.files[0];
-                    if (file) {
-                        const maxSize = 5 * 1024 * 1024; // 5MB
-                        if (file.size > maxSize) {
-                            fileError.textContent = 'File size exceeds 5MB. Please choose a smaller file.';
-                            fileError.style.display = 'block';
-                            return;
-                        }
+                    // Validate resume link
+                    const resumeLink = resumeLinkInput.value.trim();
+                    if (!resumeLink) {
+                        resumeLinkError.textContent = 'Please provide a link to your resume.';
+                        resumeLinkError.style.display = 'block';
+                        return;
+                    }
+                    if (!resumeLink.match(/^https?:\/\/.+/)) {
+                        resumeLinkError.textContent = 'Please enter a valid URL starting with http:// or https://';
+                        resumeLinkError.style.display = 'block';
+                        return;
                     }
                     
                     const formData = new FormData(joinForm);
@@ -282,13 +284,15 @@
                     submitButton.textContent = 'Submitting...';
                     submitButton.style.opacity = '0.7';
                     formMessage.innerHTML = '';
-                    fileError.style.display = 'none';
+                    resumeLinkError.style.display = 'none';
                     
-                    // Submit to Formspree - Don't set Content-Type header for file uploads
+                    // Submit to Formspree
                     fetch(joinForm.action, {
                         method: 'POST',
                         body: formData,
-                        // Don't set Content-Type - browser will set it with boundary for multipart/form-data
+                        headers: {
+                            'Accept': 'application/json'
+                        }
                     })
                     .then(response => {
                         console.log('Response status:', response.status);
@@ -327,6 +331,12 @@
                             // Handle error response
                             return response.text().then(text => {
                                 console.error('Error response text:', text);
+                                
+                                // Check for file upload error
+                                if (text.includes('File Uploads Not Permitted') || text.includes('does not support file uploads')) {
+                                    throw new Error('FILE_UPLOAD_NOT_SUPPORTED');
+                                }
+                                
                                 try {
                                     const data = JSON.parse(text);
                                     console.error('Error data:', data);
@@ -341,7 +351,10 @@
                                         throw new Error('Form submission failed: ' + (data.error || 'Unknown error'));
                                     }
                                 } catch (e) {
-                                    throw new Error('Form submission failed. Status: ' + response.status + '. ' + (text || 'Unknown error'));
+                                    if (e.message === 'FILE_UPLOAD_NOT_SUPPORTED') {
+                                        throw e;
+                                    }
+                                    throw new Error('Form submission failed. Status: ' + response.status + '. ' + (text.substring(0, 200) || 'Unknown error'));
                                 }
                             });
                         }
@@ -353,6 +366,16 @@
                             stack: error.stack,
                             name: error.name
                         });
+                        
+                        // Handle file upload not supported error
+                        if (error.message === 'FILE_UPLOAD_NOT_SUPPORTED') {
+                            buttonArea.innerHTML = '<div class="error-message-box" style="background: #fef3c7; border: 2px solid #f59e0b; color: #92400e; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(245, 158, 11, 0.2);"><div style="font-size: 2rem; margin-bottom: 1rem;">📎</div><h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem; color: #92400e;">Resume Link Required</h3><p style="margin: 0.5rem 0; font-size: 1rem;">File uploads are not supported. Please provide a link to your resume instead.</p><p style="margin: 1rem 0 0 0; font-size: 0.9rem;">You can upload your resume to Google Drive, Dropbox, or your website and share the link above.</p><p style="margin: 1rem 0 0 0; font-size: 0.9rem;">Or email your resume directly to <a href="mailto:hr@sevendyne.com?subject=Developer Application&body=Please find my resume attached." style="color: #92400e; text-decoration: underline; font-weight: 600;">hr@sevendyne.com</a></p><button type="button" onclick="location.reload()" style="margin-top: 1rem; padding: 0.75rem 1.5rem; background: #f59e0b; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">Update Form</button></div>';
+                            formMessage.innerHTML = '<div class="error-message" style="background: #fef3c7; color: #92400e; padding: 1rem; border-radius: 8px; margin-top: 1rem;"><strong>Note:</strong> Please provide a resume link in the form above, or email your resume to <a href="mailto:hr@sevendyne.com" style="color: #92400e; text-decoration: underline;">hr@sevendyne.com</a></div>';
+                            submitButton.disabled = false;
+                            submitButton.textContent = 'Submit Application';
+                            submitButton.style.opacity = '1';
+                            return;
+                        }
                         
                         // Check if it's a network/CORS error - try submitting form naturally as fallback
                         if (error.message && (error.message.includes('Failed to fetch') || error.message.includes('NetworkError') || error.name === 'TypeError')) {
