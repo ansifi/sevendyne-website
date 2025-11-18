@@ -162,7 +162,9 @@
                             </label>
                         </div>
 
-                        <button type="submit" class="btn-submit" style="width: 100%; background: #14b8a6;">Submit Application</button>
+                        <div id="buttonArea">
+                            <button type="submit" id="submitButton" class="btn-submit" style="width: 100%; background: #14b8a6;">Submit Application</button>
+                        </div>
                         
                         <div id="formMessage" class="form-message"></div>
                     </form>
@@ -235,15 +237,18 @@
             const formMessage = document.getElementById('formMessage');
 
             if (joinForm) {
+                const buttonArea = document.getElementById('buttonArea');
+                const submitButton = document.getElementById('submitButton');
+                
                 joinForm.addEventListener('submit', function(e) {
                     e.preventDefault();
                     
                     const formData = new FormData(joinForm);
-                    const submitButton = joinForm.querySelector('button[type="submit"]');
                     
-                    // Disable submit button
+                    // Disable submit button and show loading state
                     submitButton.disabled = true;
                     submitButton.textContent = 'Submitting...';
+                    submitButton.style.opacity = '0.7';
                     formMessage.innerHTML = '';
                     
                     // Submit to Formspree - Don't set Content-Type header for file uploads
@@ -253,13 +258,27 @@
                         // Don't set Content-Type - browser will set it with boundary for multipart/form-data
                     })
                     .then(response => {
+                        // Check if response is successful
                         if (response.ok) {
-                            formMessage.innerHTML = '<div class="success-message" style="background: #d1fae5; color: #065f46; padding: 1rem; border-radius: 8px; margin-top: 1rem;"><strong>✓ Thank you!</strong> Your application has been submitted successfully. We\'ll review your resume and get back to you soon.</div>';
+                            // Success - Replace button with success message
+                            buttonArea.innerHTML = '<div class="success-message-box" style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border: 2px solid #10b981; color: #065f46; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);"><div style="font-size: 3rem; margin-bottom: 1rem;">✓</div><h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem; color: #065f46;">Message Sent Successfully!</h3><p style="margin: 0.5rem 0; font-size: 1.1rem; font-weight: 600;">Your application has been received.</p><p style="margin: 0.5rem 0 0 0; font-size: 0.95rem;">We will review your resume and get back to you within <strong>24 to 48 hours</strong>.</p><p style="margin: 1rem 0 0 0; font-size: 0.9rem; opacity: 0.8;">A confirmation email has been sent to your email address.</p></div>';
+                            
+                            // Also show message below
+                            formMessage.innerHTML = '<div class="success-message" style="background: #d1fae5; color: #065f46; padding: 1rem; border-radius: 8px; margin-top: 1rem; text-align: center;"><strong>✓ Success!</strong> Your application has been submitted. We\'ll review your resume and respond within 24-48 hours.</div>';
+                            
+                            // Reset form
                             joinForm.reset();
+                            
+                            // Scroll to success message
+                            buttonArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         } else {
+                            // Handle error response
                             return response.json().then(data => {
                                 if (data.errors) {
                                     formMessage.innerHTML = '<div class="error-message" style="background: #fee2e2; color: #991b1b; padding: 1rem; border-radius: 8px; margin-top: 1rem;"><strong>Error:</strong> ' + data.errors.map(error => error.message).join(', ') + '</div>';
+                                    submitButton.disabled = false;
+                                    submitButton.textContent = 'Submit Application';
+                                    submitButton.style.opacity = '1';
                                 } else {
                                     throw new Error('Form submission failed');
                                 }
@@ -270,11 +289,11 @@
                     })
                     .catch(error => {
                         console.error('Form submission error:', error);
+                        
+                        // Show error message in button area
+                        buttonArea.innerHTML = '<div class="error-message-box" style="background: #fee2e2; border: 2px solid #ef4444; color: #991b1b; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(239, 68, 68, 0.2);"><div style="font-size: 3rem; margin-bottom: 1rem;">✗</div><h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem; color: #991b1b;">Submission Failed</h3><p style="margin: 0.5rem 0; font-size: 1rem;">There was a problem submitting your application.</p><p style="margin: 1rem 0 0 0; font-size: 0.9rem;">Please try again or email us directly at <a href="mailto:hr@sevendyne.com" style="color: #991b1b; text-decoration: underline; font-weight: 600;">hr@sevendyne.com</a> with your resume attached.</p><button type="button" onclick="location.reload()" style="margin-top: 1rem; padding: 0.75rem 1.5rem; background: #ef4444; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">Try Again</button></div>';
+                        
                         formMessage.innerHTML = '<div class="error-message" style="background: #fee2e2; color: #991b1b; padding: 1rem; border-radius: 8px; margin-top: 1rem;"><strong>Error:</strong> There was a problem submitting your application. Please try again or email us directly at <a href="mailto:hr@sevendyne.com" style="color: #991b1b; text-decoration: underline;">hr@sevendyne.com</a> with your resume attached.</div>';
-                    })
-                    .finally(() => {
-                        submitButton.disabled = false;
-                        submitButton.textContent = 'Submit Application';
                     });
                 });
             }
