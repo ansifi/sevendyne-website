@@ -376,9 +376,22 @@
                         
                         // Show error message in button area with more details
                         const errorDetails = error.message || 'Unknown error occurred';
-                        buttonArea.innerHTML = '<div class="error-message-box" style="background: #fee2e2; border: 2px solid #ef4444; color: #991b1b; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(239, 68, 68, 0.2);"><div style="font-size: 3rem; margin-bottom: 1rem;">✗</div><h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem; color: #991b1b;">Submission Failed</h3><p style="margin: 0.5rem 0; font-size: 1rem;">There was a problem submitting your application.</p><p style="margin: 0.5rem 0; font-size: 0.85rem; opacity: 0.9;">' + errorDetails + '</p><p style="margin: 1rem 0 0 0; font-size: 0.9rem;">Please try again or email us directly at <a href="mailto:hr@sevendyne.com?subject=Developer Application&body=Please find my resume attached." style="color: #991b1b; text-decoration: underline; font-weight: 600;">hr@sevendyne.com</a> with your resume attached.</p><div style="margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;"><button type="button" onclick="location.reload()" style="padding: 0.75rem 1.5rem; background: #ef4444; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">Try Again</button><button type="button" onclick="document.getElementById(\'joinForm\').removeEventListener(\'submit\', arguments.callee); document.getElementById(\'joinForm\').submit();" style="padding: 0.75rem 1.5rem; background: #6366f1; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">Submit Normally</button></div></div>';
+                        buttonArea.innerHTML = '<div class="error-message-box" style="background: #fee2e2; border: 2px solid #ef4444; color: #991b1b; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(239, 68, 68, 0.2);"><div style="font-size: 3rem; margin-bottom: 1rem;">✗</div><h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem; color: #991b1b;">Submission Failed</h3><p style="margin: 0.5rem 0; font-size: 1rem;">There was a problem submitting your application.</p><p style="margin: 0.5rem 0; font-size: 0.85rem; opacity: 0.9;">' + errorDetails + '</p><p style="margin: 1rem 0 0 0; font-size: 0.9rem;">Please try again or email us directly at <a href="mailto:hr@sevendyne.com?subject=Developer Application&body=Please find my resume attached." style="color: #991b1b; text-decoration: underline; font-weight: 600;">hr@sevendyne.com</a> with your resume attached.</p><div style="margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;"><button type="button" onclick="location.reload()" style="padding: 0.75rem 1.5rem; background: #ef4444; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">Try Again</button><button type="button" id="submitNormallyBtn" style="padding: 0.75rem 1.5rem; background: #6366f1; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">Submit Normally</button></div></div>';
                         
                         formMessage.innerHTML = '<div class="error-message" style="background: #fee2e2; color: #991b1b; padding: 1rem; border-radius: 8px; margin-top: 1rem;"><strong>Error:</strong> ' + errorDetails + '<br>Please try again or email us directly at <a href="mailto:hr@sevendyne.com" style="color: #991b1b; text-decoration: underline;">hr@sevendyne.com</a> with your resume attached.</div>';
+                        
+                        // Add click handler for submit normally button
+                        setTimeout(() => {
+                            const submitNormallyBtn = document.getElementById('submitNormallyBtn');
+                            if (submitNormallyBtn) {
+                                submitNormallyBtn.addEventListener('click', function() {
+                                    // Clone form and submit without event listener
+                                    const formClone = joinForm.cloneNode(true);
+                                    joinForm.parentNode.replaceChild(formClone, joinForm);
+                                    formClone.submit();
+                                });
+                            }
+                        }, 100);
                     });
                 });
             }
