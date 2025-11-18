@@ -6239,6 +6239,21 @@ body {
 }
 
 /* Section Header Colors with Background Boxes - Distinct colors for each section */
+/* Center section headers within their containers */
+.services-overview,
+.projects-showcase,
+.pricing-section,
+.contact,
+.about-content,
+.cta-section,
+.service-case-studies,
+.portfolio-section,
+.industries,
+.contact-faq,
+.pricing-faq {
+    text-align: center;
+}
+
 /* Services Section - Blue */
 .services-overview h2,
 .services-detail h2,
