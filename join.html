@@ -77,6 +77,7 @@
                     
                     <form id="joinForm" class="contact-form" action="https://formspree.io/f/mldoabko" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="_subject" value="New Developer Application - Sevendyne">
+                        <input type="hidden" name="_replyto" id="_replyto" value="">
                         <input type="hidden" name="_cc" value="hr@sevendyne.com">
                         
                         <div class="form-group">
@@ -235,8 +236,22 @@
             const formMessage = document.getElementById('formMessage');
 
             if (joinForm) {
+                // Sync email field with _replyto hidden field
+                const emailField = document.getElementById('email');
+                const replyToField = document.getElementById('_replyto');
+                if (emailField && replyToField) {
+                    emailField.addEventListener('change', function() {
+                        replyToField.value = emailField.value;
+                    });
+                }
+
                 joinForm.addEventListener('submit', function(e) {
                     e.preventDefault();
+                    
+                    // Update _replyto field with email value
+                    if (emailField && replyToField) {
+                        replyToField.value = emailField.value;
+                    }
                     
                     const formData = new FormData(joinForm);
                     const submitButton = joinForm.querySelector('button[type="submit"]');
@@ -246,13 +261,11 @@
                     submitButton.textContent = 'Submitting...';
                     formMessage.innerHTML = '';
                     
-                    // Submit to Formspree
+                    // Submit to Formspree - Don't set Content-Type header for file uploads
                     fetch(joinForm.action, {
                         method: 'POST',
                         body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
+                        // Don't set Content-Type - browser will set it with boundary for multipart/form-data
                     })
                     .then(response => {
                         if (response.ok) {
@@ -265,11 +278,14 @@
                                 } else {
                                     throw new Error('Form submission failed');
                                 }
+                            }).catch(() => {
+                                throw new Error('Form submission failed');
                             });
                         }
                     })
                     .catch(error => {
-                        formMessage.innerHTML = '<div class="error-message" style="background: #fee2e2; color: #991b1b; padding: 1rem; border-radius: 8px; margin-top: 1rem;"><strong>Error:</strong> There was a problem submitting your application. Please try again or email us directly at <a href="mailto:hr@sevendyne.com" style="color: #991b1b; text-decoration: underline;">hr@sevendyne.com</a></div>';
+                        console.error('Form submission error:', error);
+                        formMessage.innerHTML = '<div class="error-message" style="background: #fee2e2; color: #991b1b; padding: 1rem; border-radius: 8px; margin-top: 1rem;"><strong>Error:</strong> There was a problem submitting your application. Please try again or email us directly at <a href="mailto:hr@sevendyne.com" style="color: #991b1b; text-decoration: underline;">hr@sevendyne.com</a> with your resume attached.</div>';
                     })
                     .finally(() => {
                         submitButton.disabled = false;
