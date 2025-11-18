@@ -403,21 +403,21 @@ function initModal() {
                 console.log('Modal opened');
             });
         });
-    
-    // Close modal
-    if (modalClose) {
-        modalClose.addEventListener('click', function() {
-            closeModal();
-        });
-    }
-    
-    // Close modal when clicking outside
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            closeModal();
+        
+        // Close modal
+        if (modalClose) {
+            modalClose.addEventListener('click', function() {
+                closeModal();
+            });
         }
-    });
-    
+        
+        // Close modal when clicking outside
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        
         // Close modal on Escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && modal.classList.contains('active')) {
