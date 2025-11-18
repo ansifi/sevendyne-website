@@ -6252,7 +6252,7 @@ section[id*="service"] h2,
     padding: 1rem 2rem !important;
     border-radius: 12px !important;
     display: inline-block !important;
-    margin-bottom: 1.5rem !important;
+    margin: 0 auto 1.5rem auto !important;
     box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2) !important;
 }
 
@@ -6267,7 +6267,7 @@ section[id*="project"] h2 {
     padding: 1rem 2rem !important;
     border-radius: 12px !important;
     display: inline-block !important;
-    margin-bottom: 1.5rem !important;
+    margin: 0 auto 1.5rem auto !important;
     box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2) !important;
 }
 
@@ -6285,7 +6285,7 @@ section[id*="pricing"] h2 {
     padding: 1rem 2rem !important;
     border-radius: 12px !important;
     display: inline-block !important;
-    margin-bottom: 1.5rem !important;
+    margin: 0 auto 1.5rem auto !important;
     box-shadow: 0 4px 6px rgba(245, 158, 11, 0.2) !important;
 }
 
@@ -6301,7 +6301,7 @@ section[id*="contact"] h2,
     padding: 1rem 2rem !important;
     border-radius: 12px !important;
     display: inline-block !important;
-    margin-bottom: 1.5rem !important;
+    margin: 0 auto 1.5rem auto !important;
     box-shadow: 0 4px 6px rgba(99, 102, 241, 0.2) !important;
 }
 
