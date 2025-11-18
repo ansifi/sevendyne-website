@@ -16,12 +16,26 @@
                 <h1><a href="/" style="text-decoration: none; color: inherit;">Sevendyne</a></h1>
                 <p class="tagline">Sevendyne Consultancy Services LLP</p>
             </div>
-                                    <nav class="nav">
+            <nav class="nav">
                 <a href="projects/">Projects Worked</a>
                 <a href="about/">About Us</a>
                 <a href="join/">Join Us</a>
                 <a class="featured-link" href="#contact">Request Support</a>
             </nav>
+            <div class="currency-selector">
+                <select id="currencySelector" style="padding: 0.5rem 1rem; border: 1px solid #e5e7eb; border-radius: 6px; font-size: 0.9rem; background: white; cursor: pointer;">
+                    <option value="INR">🇮🇳 India (INR)</option>
+                    <option value="USD">🇺🇸 United States (USD)</option>
+                    <option value="GBP">🇬🇧 United Kingdom (GBP)</option>
+                    <option value="EUR">🇩🇪 Germany (EUR)</option>
+                    <option value="EUR-FR">🇫🇷 France (EUR)</option>
+                    <option value="CNY">🇨🇳 China (CNY)</option>
+                    <option value="RUB">🇷🇺 Russia (RUB)</option>
+                    <option value="AED">🇦🇪 UAE (AED)</option>
+                    <option value="MYR">🇲🇾 Malaysia (MYR)</option>
+                    <option value="SGD">🇸🇬 Singapore (SGD)</option>
+                </select>
+            </div>
         </div>
     </header>
 
@@ -223,10 +237,10 @@
                         <h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem;">Starter</h3>
                         <p style="color: #64748b; margin: 0 0 1.5rem 0;">Perfect for MVPs & small projects</p>
                         <div>
-                            <span style="font-size: 2.5rem; font-weight: 700; color: #1e293b;">₹40,000</span>
-                            <span style="color: #64748b;">/month</span>
+                            <span class="price-amount" data-inr="40000" style="font-size: 2.5rem; font-weight: 700; color: #1e293b;">₹40,000</span>
+                            <span class="price-period" style="color: #64748b;">/month</span>
                         </div>
-                        <p style="font-size: 0.875rem; color: #10b981; margin-top: 0.5rem; font-weight: 600;">First month 50% off - ₹20,000</p>
+                        <p class="discount-text" data-inr="20000" style="font-size: 0.875rem; color: #10b981; margin-top: 0.5rem; font-weight: 600;">First month 50% off - ₹20,000</p>
                         <p style="font-size: 0.875rem; color: #64748b; margin-top: 0.5rem;">~15-20 hours/week coverage</p>
                     </div>
                     <ul style="list-style: none; padding: 0; margin: 2rem 0;">
@@ -237,7 +251,7 @@
                         <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9;">✓ Weekly progress updates</li>
                         <li style="padding: 0.75rem 0;">✓ Email support</li>
                     </ul>
-                    <button type="button" class="btn-primary get-started-btn" data-plan="Starter" data-price="₹40,000/month" style="width: 100%; display: block; text-align: center; margin-top: 1.5rem; background: var(--tile-bg); color: var(--primary-color); border: 1px solid rgba(37, 99, 235, 0.2); cursor: pointer; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; transition: all 0.3s;">Get Started</button>
+                    <button type="button" class="btn-primary get-started-btn" data-plan="Starter" data-price-inr="40000" data-price="₹40,000/month" style="width: 100%; display: block; text-align: center; margin-top: 1.5rem; background: var(--tile-bg); color: var(--primary-color); border: 1px solid rgba(37, 99, 235, 0.2); cursor: pointer; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; transition: all 0.3s;">Get Started</button>
                 </div>
 
                 <!-- Professional Tier -->
@@ -247,8 +261,8 @@
                         <h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem;">Professional</h3>
                         <p style="color: #64748b; margin: 0 0 1.5rem 0;">Dedicated development team</p>
                         <div>
-                            <span style="font-size: 2.5rem; font-weight: 700; color: #1e293b;">₹100,000</span>
-                            <span style="color: #64748b;">/month</span>
+                            <span class="price-amount" data-inr="100000" style="font-size: 2.5rem; font-weight: 700; color: #1e293b;">₹100,000</span>
+                            <span class="price-period" style="color: #64748b;">/month</span>
                         </div>
                         <p style="font-size: 0.875rem; color: #64748b; margin-top: 0.5rem;">~40 hours/week coverage</p>
                     </div>
@@ -260,7 +274,7 @@
                         <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9;">✓ Priority response for issues</li>
                         <li style="padding: 0.75rem 0;">✓ Daily standups & progress reports</li>
                     </ul>
-                    <button type="button" class="btn-primary get-started-btn" data-plan="Professional" data-price="₹100,000/month" style="width: 100%; display: block; text-align: center; margin-top: 1.5rem; background: var(--tile-bg); color: var(--primary-color); border: 1px solid rgba(37, 99, 235, 0.2); cursor: pointer; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; transition: all 0.3s;">Get Started</button>
+                    <button type="button" class="btn-primary get-started-btn" data-plan="Professional" data-price-inr="100000" data-price="₹100,000/month" style="width: 100%; display: block; text-align: center; margin-top: 1.5rem; background: var(--tile-bg); color: var(--primary-color); border: 1px solid rgba(37, 99, 235, 0.2); cursor: pointer; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; transition: all 0.3s;">Get Started</button>
                 </div>
 
                 <!-- Enterprise Tier -->
@@ -270,8 +284,8 @@
                         <h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem;">Enterprise Pod</h3>
                         <p style="color: #64748b; margin: 0 0 1.5rem 0;">Large-scale development & support</p>
                         <div>
-                            <span style="font-size: 2.5rem; font-weight: 700; color: #1e293b;">₹300,000</span>
-                            <span style="color: #64748b;">/month</span>
+                            <span class="price-amount" data-inr="300000" style="font-size: 2.5rem; font-weight: 700; color: #1e293b;">₹300,000</span>
+                            <span class="price-period" style="color: #64748b;">/month</span>
                         </div>
                         <p style="font-size: 0.875rem; color: #64748b; margin-top: 0.5rem;">~160+ hours/week coverage</p>
                     </div>
@@ -283,7 +297,7 @@
                         <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9;">✓ 24/7 priority support</li>
                         <li style="padding: 0.75rem 0;">✓ SLA guarantees</li>
                     </ul>
-                    <button type="button" class="btn-primary get-started-btn" data-plan="Enterprise Pod" data-price="₹300,000/month" style="width: 100%; display: block; text-align: center; margin-top: 1.5rem; background: var(--tile-bg); color: var(--primary-color); border: 1px solid rgba(37, 99, 235, 0.2); cursor: pointer; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; transition: all 0.3s;">Get Started</button>
+                    <button type="button" class="btn-primary get-started-btn" data-plan="Enterprise Pod" data-price-inr="300000" data-price="₹300,000/month" style="width: 100%; display: block; text-align: center; margin-top: 1.5rem; background: var(--tile-bg); color: var(--primary-color); border: 1px solid rgba(37, 99, 235, 0.2); cursor: pointer; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; transition: all 0.3s;">Get Started</button>
                 </div>
 
                 <!-- Project-Based -->
@@ -292,8 +306,8 @@
                         <h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem;">Project-Based</h3>
                         <p style="color: #64748b; margin: 0 0 1.5rem 0;">For one-off projects</p>
                         <div>
-                            <span style="font-size: 2.5rem; font-weight: 700; color: #1e293b;">₹1,500</span>
-                            <span style="color: #64748b;">/hour</span>
+                            <span class="price-amount" data-inr="1500" style="font-size: 2.5rem; font-weight: 700; color: #1e293b;">₹1,500</span>
+                            <span class="price-period" style="color: #64748b;">/hour</span>
                         </div>
                         <p style="font-size: 0.875rem; color: #64748b; margin-top: 0.5rem;">Pay only for work done</p>
                     </div>
@@ -304,7 +318,7 @@
                         <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9;">✓ No monthly commitment</li>
                         <li style="padding: 0.75rem 0;">✓ Transparent time tracking</li>
                     </ul>
-                    <button type="button" class="btn-primary get-started-btn" data-plan="Project-Based" data-price="₹1,500/hour" style="width: 100%; display: block; text-align: center; margin-top: 1.5rem; background: var(--tile-bg); color: var(--primary-color); border: 1px solid rgba(37, 99, 235, 0.2); cursor: pointer; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; transition: all 0.3s;">Get Quote</button>
+                    <button type="button" class="btn-primary get-started-btn" data-plan="Project-Based" data-price-inr="1500" data-price="₹1,500/hour" style="width: 100%; display: block; text-align: center; margin-top: 1.5rem; background: var(--tile-bg); color: var(--primary-color); border: 1px solid rgba(37, 99, 235, 0.2); cursor: pointer; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; transition: all 0.3s;">Get Quote</button>
                 </div>
             </div>
 
@@ -316,37 +330,37 @@
                     <div class="add-on-card">
                         <h4>DevOps & Infrastructure</h4>
                         <div class="price-row">
-                            <span class="price-amount">₹50,000</span>
+                            <span class="price-amount" data-inr="50000">₹50,000</span>
                             <span class="price-period">/month</span>
                         </div>
                     </div>
                     <div class="add-on-card">
                         <h4>AI/ML Services</h4>
                         <div class="price-row">
-                            <span class="price-amount">₹50,000</span>
+                            <span class="price-amount" data-inr="50000">₹50,000</span>
                             <span class="price-period">/month</span>
                         </div>
                     </div>
                     <div class="add-on-card">
                         <h4>24/7 Support</h4>
                         <div class="price-row">
-                            <span class="price-amount">₹50,000</span>
+                            <span class="price-amount" data-inr="50000">₹50,000</span>
                             <span class="price-period">/month</span>
                         </div>
                     </div>
                     <div class="add-on-card">
                         <h4>Dedicated PM</h4>
                         <div class="price-row">
-                            <span class="price-amount">₹50,000</span>
+                            <span class="price-amount" data-inr="50000">₹50,000</span>
                             <span class="price-period">/month</span>
                         </div>
                     </div>
                 </div>
-                <p style="text-align: center; margin-top: 2rem; color: rgba(255, 255, 255, 0.9); font-size: 0.875rem;"><strong>Example:</strong> Professional (₹1L) + DevOps (₹50K) + PM (₹50K) = ₹2L/month. Add more services to reach ₹3L/month.</p>
+                <p class="pricing-example" style="text-align: center; margin-top: 2rem; color: rgba(255, 255, 255, 0.9); font-size: 0.875rem;"><strong>Example:</strong> Professional (<span class="example-price" data-inr="100000">₹1L</span>) + DevOps (<span class="example-price" data-inr="50000">₹50K</span>) + PM (<span class="example-price" data-inr="50000">₹50K</span>) = <span class="example-price" data-inr="200000">₹2L</span>/month. Add more services to reach <span class="example-price" data-inr="300000">₹3L</span>/month.</p>
             </div>
 
             <div class="pricing-note-card" style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.2);">
-                <p style="margin: 0; color: rgba(255, 255, 255, 0.9);"><strong>Start Small, Scale Up:</strong> Begin with our Starter tier at ₹40K/month, prove value, then scale to Professional or Enterprise as your needs grow. No long-term commitment required.</p>
+                <p style="margin: 0; color: rgba(255, 255, 255, 0.9);"><strong>Start Small, Scale Up:</strong> Begin with our Starter tier at <span class="example-price" data-inr="40000">₹40K</span>/month, prove value, then scale to Professional or Enterprise as your needs grow. No long-term commitment required.</p>
                 <p style="margin: 0.5rem 0 0 0; font-size: 0.875rem; color: rgba(255, 255, 255, 0.9);">All engagements include regular communication, code reviews, and progress tracking. First month 50% off for Starter tier. 30-day money-back guarantee.</p>
             </div>
         </div>
@@ -547,10 +561,10 @@
                         <label for="budget">Budget Range</label>
                         <select id="budget" name="budget">
                             <option value="">Select budget range</option>
-                            <option value="under-50k">Under ₹50,000/month</option>
-                            <option value="50k-1l">₹50,000 - ₹1,00,000/month</option>
-                            <option value="1l-3l">₹1,00,000 - ₹3,00,000/month</option>
-                            <option value="3l-plus">₹3,00,000+/month</option>
+                            <option value="under-50k" data-inr="50000">Under ₹50,000/month</option>
+                            <option value="50k-1l" data-inr-min="50000" data-inr-max="100000">₹50,000 - ₹1,00,000/month</option>
+                            <option value="1l-3l" data-inr-min="100000" data-inr-max="300000">₹1,00,000 - ₹3,00,000/month</option>
+                            <option value="3l-plus" data-inr="300000">₹3,00,000+/month</option>
                             <option value="project-based">Project-based (hourly)</option>
                         </select>
                     </div>

@@ -387,10 +387,24 @@ function initModal() {
                 
                 const plan = this.getAttribute('data-plan');
                 const price = this.getAttribute('data-price');
+                const priceINR = this.getAttribute('data-price-inr');
+                
+                // Get current currency
+                const currencySelector = document.getElementById('currencySelector');
+                const currentCurrency = currencySelector ? currencySelector.value : 'INR';
+                
+                // Use current price (already converted) or convert from INR
+                let displayPrice = price;
+                if (priceINR && currentCurrency !== 'INR') {
+                    const inrValue = parseFloat(priceINR);
+                    const converted = convertCurrency(inrValue, currentCurrency);
+                    const period = price.includes('/month') ? '/month' : '/hour';
+                    displayPrice = formatPrice(converted, currentCurrency) + period;
+                }
                 
                 if (modalPlanName) modalPlanName.textContent = plan;
                 if (formPlan) formPlan.value = plan;
-                if (formPrice) formPrice.value = price;
+                if (formPrice) formPrice.value = displayPrice;
                 
                 // Reset form to step 1
                 currentStep = 1;
@@ -559,4 +573,179 @@ function submitForm() {
 // Make functions globally available for onclick handlers
 window.nextStep = nextStep;
 window.prevStep = prevStep;
+
+// Currency Conversion System
+const exchangeRates = {
+    'INR': 1,           // Base currency
+    'USD': 0.012,       // 1 INR = 0.012 USD (approx)
+    'GBP': 0.0095,      // 1 INR = 0.0095 GBP (approx)
+    'EUR': 0.011,       // 1 INR = 0.011 EUR (approx)
+    'CNY': 0.087,       // 1 INR = 0.087 CNY (approx)
+    'RUB': 1.1,         // 1 INR = 1.1 RUB (approx)
+    'AED': 0.044,       // 1 INR = 0.044 AED (approx)
+    'MYR': 0.056,       // 1 INR = 0.056 MYR (approx)
+    'SGD': 0.016        // 1 INR = 0.016 SGD (approx)
+};
+
+const currencySymbols = {
+    'INR': '₹',
+    'USD': '$',
+    'GBP': '£',
+    'EUR': '€',
+    'CNY': '¥',
+    'RUB': '₽',
+    'AED': 'د.إ',
+    'MYR': 'RM',
+    'SGD': 'S$'
+};
+
+const currencyFormats = {
+    'INR': (val) => formatIndianCurrency(val),
+    'USD': (val) => formatUSCurrency(val),
+    'GBP': (val) => formatUSCurrency(val),
+    'EUR': (val) => formatEuros(val),
+    'CNY': (val) => formatUSCurrency(val),
+    'RUB': (val) => formatUSCurrency(val),
+    'AED': (val) => formatUSCurrency(val),
+    'MYR': (val) => formatUSCurrency(val),
+    'SGD': (val) => formatUSCurrency(val)
+};
+
+function formatIndianCurrency(value) {
+    if (value >= 100000) {
+        return '₹' + (value / 100000).toFixed(1) + 'L';
+    } else if (value >= 1000) {
+        return '₹' + (value / 1000).toFixed(0) + 'K';
+    }
+    return '₹' + value.toLocaleString('en-IN');
+}
+
+function formatUSCurrency(value) {
+    if (value >= 1000) {
+        return value.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    }
+    return value.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+}
+
+function formatEuros(value) {
+    if (value >= 1000) {
+        return value.toLocaleString('de-DE', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    }
+    return value.toLocaleString('de-DE', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+}
+
+function convertCurrency(amountINR, targetCurrency) {
+    if (targetCurrency === 'EUR-FR') targetCurrency = 'EUR';
+    const rate = exchangeRates[targetCurrency] || 1;
+    return amountINR * rate;
+}
+
+function formatPrice(value, currency) {
+    if (currency === 'EUR-FR') currency = 'EUR';
+    const symbol = currencySymbols[currency] || '₹';
+    const formatter = currencyFormats[currency] || formatIndianCurrency;
+    const formatted = formatter(value);
+    // Check if formatter already includes symbol
+    if (formatted.includes('₹') || formatted.includes('$') || formatted.includes('£') || formatted.includes('€') || formatted.includes('¥') || formatted.includes('₽') || formatted.includes('د.إ') || formatted.includes('RM') || formatted.includes('S$')) {
+        return formatted;
+    }
+    return symbol + formatted;
+}
+
+function updateAllPrices(currency) {
+    // Update all price amounts
+    document.querySelectorAll('.price-amount[data-inr]').forEach(element => {
+        const inrValue = parseFloat(element.getAttribute('data-inr'));
+        const converted = convertCurrency(inrValue, currency);
+        element.textContent = formatPrice(converted, currency);
+    });
+    
+    // Update discount text
+    document.querySelectorAll('.discount-text[data-inr]').forEach(element => {
+        const inrValue = parseFloat(element.getAttribute('data-inr'));
+        const converted = convertCurrency(inrValue, currency);
+        const period = element.textContent.includes('/month') ? '/month' : '';
+        element.textContent = element.textContent.split(' - ')[0] + ' - ' + formatPrice(converted, currency) + period;
+    });
+    
+    // Update example prices
+    document.querySelectorAll('.example-price[data-inr]').forEach(element => {
+        const inrValue = parseFloat(element.getAttribute('data-inr'));
+        const converted = convertCurrency(inrValue, currency);
+        const originalText = element.textContent;
+        if (originalText.includes('L')) {
+            // Format as L (Lakhs) equivalent
+            if (converted >= 100000) {
+                element.textContent = formatPrice(converted / 100000, currency) + 'L';
+            } else if (converted >= 1000) {
+                element.textContent = formatPrice(converted / 1000, currency) + 'K';
+            } else {
+                element.textContent = formatPrice(converted, currency);
+            }
+        } else if (originalText.includes('K')) {
+            // Format as K (Thousands) equivalent
+            if (converted >= 1000) {
+                element.textContent = formatPrice(converted / 1000, currency) + 'K';
+            } else {
+                element.textContent = formatPrice(converted, currency);
+            }
+        } else {
+            element.textContent = formatPrice(converted, currency);
+        }
+    });
+    
+    // Update budget dropdown options
+    const budgetSelect = document.getElementById('budget');
+    if (budgetSelect) {
+        Array.from(budgetSelect.options).forEach(option => {
+            if (option.value && option.value !== '' && option.value !== 'project-based') {
+                const inrMin = option.getAttribute('data-inr-min');
+                const inrMax = option.getAttribute('data-inr-max');
+                const inr = option.getAttribute('data-inr');
+                
+                if (inr) {
+                    const converted = convertCurrency(parseFloat(inr), currency);
+                    option.textContent = 'Under ' + formatPrice(converted, currency) + '/month';
+                } else if (inrMin && inrMax) {
+                    const convertedMin = convertCurrency(parseFloat(inrMin), currency);
+                    const convertedMax = convertCurrency(parseFloat(inrMax), currency);
+                    option.textContent = formatPrice(convertedMin, currency) + ' - ' + formatPrice(convertedMax, currency) + '/month';
+                }
+            }
+        });
+    }
+    
+    // Update button data-price attributes
+    document.querySelectorAll('.get-started-btn[data-price-inr]').forEach(button => {
+        const inrValue = parseFloat(button.getAttribute('data-price-inr'));
+        const converted = convertCurrency(inrValue, currency);
+        const period = button.getAttribute('data-price').includes('/month') ? '/month' : '/hour';
+        button.setAttribute('data-price', formatPrice(converted, currency) + period);
+    });
+}
+
+// Initialize currency selector
+function initCurrencySelector() {
+    const selector = document.getElementById('currencySelector');
+    if (!selector) return;
+    
+    // Load saved currency from localStorage
+    const savedCurrency = localStorage.getItem('selectedCurrency') || 'INR';
+    selector.value = savedCurrency;
+    updateAllPrices(savedCurrency);
+    
+    // Handle currency change
+    selector.addEventListener('change', function() {
+        const selectedCurrency = this.value;
+        localStorage.setItem('selectedCurrency', selectedCurrency);
+        updateAllPrices(selectedCurrency);
+    });
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCurrencySelector);
+} else {
+    initCurrencySelector();
+}
 
