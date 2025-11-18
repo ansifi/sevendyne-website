@@ -4260,6 +4260,10 @@ body {
 
 .projects-showcase .project-showcase-card {
     color: #0f172a;
+    background: rgba(255, 255, 255, 0.97);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
 }
 
 .projects-showcase .project-showcase-card h3 {
@@ -4273,10 +4277,17 @@ body {
 
 .projects-showcase .project-showcase-card .project-badge {
     color: #0f172a;
+    background: rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(15, 23, 42, 0.15);
 }
 
 .projects-showcase .all-projects-grid .project-card {
     color: #0f172a;
+    background: rgba(255, 255, 255, 0.97);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-left: 4px solid #10b981;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .projects-showcase .all-projects-grid .project-card p {
@@ -6432,6 +6443,15 @@ section[id*="contact"] h2,
     margin-bottom: 1.5rem;
 }
 
+.contact-info {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.25);
+    backdrop-filter: blur(6px);
+}
+
 .contact-item {
     color: rgba(255, 255, 255, 0.95);
     margin-bottom: 1rem;
@@ -6456,6 +6476,10 @@ section[id*="contact"] h2,
 .contact-item a:hover {
     color: #fcd34d;
     text-decoration: underline;
+}
+
+.contact-item span {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .contact-form {
