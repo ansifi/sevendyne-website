@@ -304,6 +304,54 @@ document.querySelectorAll('.stat-item h3, .hero-stat strong').forEach(stat => {
 let currentStep = 1;
 const totalSteps = 3;
 
+// Define functions first
+function showStep(step) {
+    const steps = document.querySelectorAll('.form-step');
+    steps.forEach((s, index) => {
+        if (index + 1 === step) {
+            s.classList.add('active');
+        } else {
+            s.classList.remove('active');
+        }
+    });
+}
+
+function updateProgress() {
+    const progressSteps = document.querySelectorAll('.progress-step');
+    progressSteps.forEach((step, index) => {
+        const stepNum = index + 1;
+        step.classList.remove('active', 'completed');
+        
+        if (stepNum < currentStep) {
+            step.classList.add('completed');
+        } else if (stepNum === currentStep) {
+            step.classList.add('active');
+        }
+    });
+}
+
+function closeModal() {
+    const modal = document.getElementById('getStartedModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        // Reset form after a delay
+        setTimeout(() => {
+            currentStep = 1;
+            showStep(1);
+            updateProgress();
+            const form = document.getElementById('getStartedForm');
+            if (form) form.reset();
+            const formMessage = document.getElementById('formMessage');
+            if (formMessage) {
+                formMessage.style.display = 'none';
+                formMessage.textContent = '';
+            }
+        }, 300);
+    }
+}
+
 // Open modal when Get Started buttons are clicked
 document.addEventListener('DOMContentLoaded', function() {
     const getStartedButtons = document.querySelectorAll('.get-started-btn');
@@ -314,15 +362,34 @@ document.addEventListener('DOMContentLoaded', function() {
     const formPrice = document.getElementById('formPrice');
     const getStartedForm = document.getElementById('getStartedForm');
     
+    console.log('Found buttons:', getStartedButtons.length);
+    console.log('Modal found:', !!modal);
+    
+    // Check if modal exists
+    if (!modal) {
+        console.error('Modal element not found');
+        return;
+    }
+    
+    if (getStartedButtons.length === 0) {
+        console.error('No Get Started buttons found');
+        return;
+    }
+    
     // Open modal
     getStartedButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            console.log('Button clicked');
+            
             const plan = this.getAttribute('data-plan');
             const price = this.getAttribute('data-price');
             
-            modalPlanName.textContent = plan;
-            formPlan.value = plan;
-            formPrice.value = price;
+            if (modalPlanName) modalPlanName.textContent = plan;
+            if (formPlan) formPlan.value = plan;
+            if (formPrice) formPrice.value = price;
             
             // Reset form to step 1
             currentStep = 1;
@@ -331,6 +398,8 @@ document.addEventListener('DOMContentLoaded', function() {
             
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
+            
+            console.log('Modal opened');
         });
     });
     
@@ -364,49 +433,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-function closeModal() {
-    const modal = document.getElementById('getStartedModal');
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-    
-    // Reset form after a delay
-    setTimeout(() => {
-        currentStep = 1;
-        showStep(1);
-        updateProgress();
-        document.getElementById('getStartedForm').reset();
-        const formMessage = document.getElementById('formMessage');
-        if (formMessage) {
-            formMessage.style.display = 'none';
-            formMessage.textContent = '';
-        }
-    }, 300);
-}
-
-function showStep(step) {
-    const steps = document.querySelectorAll('.form-step');
-    steps.forEach((s, index) => {
-        if (index + 1 === step) {
-            s.classList.add('active');
-        } else {
-            s.classList.remove('active');
-        }
-    });
-}
-
-function updateProgress() {
-    const progressSteps = document.querySelectorAll('.progress-step');
-    progressSteps.forEach((step, index) => {
-        const stepNum = index + 1;
-        step.classList.remove('active', 'completed');
-        
-        if (stepNum < currentStep) {
-            step.classList.add('completed');
-        } else if (stepNum === currentStep) {
-            step.classList.add('active');
-        }
-    });
-}
 
 function nextStep() {
     const currentStepElement = document.querySelector(`.form-step[data-step="${currentStep}"]`);
