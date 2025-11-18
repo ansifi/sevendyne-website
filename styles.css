@@ -7050,6 +7050,19 @@ section[id*="booking"] h2 {
         max-width: 95%;
     }
     
+    .budget-currency-row {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+    
+    .budget-currency-row > div:last-child {
+        flex: 1 !important;
+    }
+    
+    .budget-currency-row select {
+        min-width: 100% !important;
+    }
+    
     .form-progress {
         margin-bottom: 2rem;
     }
