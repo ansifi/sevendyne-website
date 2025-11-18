@@ -6371,7 +6371,7 @@ section[id*="pricing"] h2 {
 }
 
 .pricing-section h3 {
-    color: white;
+    color: var(--text-dark);
 }
 
 .pricing-section .pricing-intro-card,
