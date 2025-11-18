@@ -353,9 +353,24 @@
                             name: error.name
                         });
                         
+                        // Check if it's a network/CORS error - try submitting form naturally as fallback
+                        if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError') || error.name === 'TypeError') {
+                            console.log('Network error detected. Attempting natural form submission as fallback...');
+                            
+                            // Remove the event listener to allow natural submission
+                            joinForm.removeEventListener('submit', arguments.callee);
+                            
+                            // Show message that form will submit normally
+                            buttonArea.innerHTML = '<div style="background: #fef3c7; border: 2px solid #f59e0b; color: #92400e; padding: 1rem; border-radius: 8px; text-align: center; margin-bottom: 1rem;"><p style="margin: 0; font-size: 0.9rem;">Submitting form... You will be redirected to a confirmation page.</p></div>';
+                            
+                            // Submit form naturally (will redirect to Formspree thank you page)
+                            joinForm.submit();
+                            return;
+                        }
+                        
                         // Show error message in button area with more details
                         const errorDetails = error.message || 'Unknown error occurred';
-                        buttonArea.innerHTML = '<div class="error-message-box" style="background: #fee2e2; border: 2px solid #ef4444; color: #991b1b; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(239, 68, 68, 0.2);"><div style="font-size: 3rem; margin-bottom: 1rem;">✗</div><h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem; color: #991b1b;">Submission Failed</h3><p style="margin: 0.5rem 0; font-size: 1rem;">There was a problem submitting your application.</p><p style="margin: 0.5rem 0; font-size: 0.85rem; opacity: 0.9;">' + errorDetails + '</p><p style="margin: 1rem 0 0 0; font-size: 0.9rem;">Please try again or email us directly at <a href="mailto:hr@sevendyne.com?subject=Developer Application&body=Please find my resume attached." style="color: #991b1b; text-decoration: underline; font-weight: 600;">hr@sevendyne.com</a> with your resume attached.</p><button type="button" onclick="location.reload()" style="margin-top: 1rem; padding: 0.75rem 1.5rem; background: #ef4444; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">Try Again</button></div>';
+                        buttonArea.innerHTML = '<div class="error-message-box" style="background: #fee2e2; border: 2px solid #ef4444; color: #991b1b; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(239, 68, 68, 0.2);"><div style="font-size: 3rem; margin-bottom: 1rem;">✗</div><h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem; color: #991b1b;">Submission Failed</h3><p style="margin: 0.5rem 0; font-size: 1rem;">There was a problem submitting your application.</p><p style="margin: 0.5rem 0; font-size: 0.85rem; opacity: 0.9;">' + errorDetails + '</p><p style="margin: 1rem 0 0 0; font-size: 0.9rem;">Please try again or email us directly at <a href="mailto:hr@sevendyne.com?subject=Developer Application&body=Please find my resume attached." style="color: #991b1b; text-decoration: underline; font-weight: 600;">hr@sevendyne.com</a> with your resume attached.</p><div style="margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;"><button type="button" onclick="location.reload()" style="padding: 0.75rem 1.5rem; background: #ef4444; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">Try Again</button><button type="button" onclick="document.getElementById(\'joinForm\').removeEventListener(\'submit\', arguments.callee); document.getElementById(\'joinForm\').submit();" style="padding: 0.75rem 1.5rem; background: #6366f1; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">Submit Normally</button></div></div>';
                         
                         formMessage.innerHTML = '<div class="error-message" style="background: #fee2e2; color: #991b1b; padding: 1rem; border-radius: 8px; margin-top: 1rem;"><strong>Error:</strong> ' + errorDetails + '<br>Please try again or email us directly at <a href="mailto:hr@sevendyne.com" style="color: #991b1b; text-decoration: underline;">hr@sevendyne.com</a> with your resume attached.</div>';
                     });
