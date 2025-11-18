@@ -353,55 +353,56 @@ function closeModal() {
 }
 
 // Open modal when Get Started buttons are clicked
-document.addEventListener('DOMContentLoaded', function() {
-    const getStartedButtons = document.querySelectorAll('.get-started-btn');
-    const modal = document.getElementById('getStartedModal');
-    const modalClose = document.querySelector('.modal-close');
-    const modalPlanName = document.getElementById('modalPlanName');
-    const formPlan = document.getElementById('formPlan');
-    const formPrice = document.getElementById('formPrice');
-    const getStartedForm = document.getElementById('getStartedForm');
-    
-    console.log('Found buttons:', getStartedButtons.length);
-    console.log('Modal found:', !!modal);
-    
-    // Check if modal exists
-    if (!modal) {
-        console.error('Modal element not found');
-        return;
-    }
-    
-    if (getStartedButtons.length === 0) {
-        console.error('No Get Started buttons found');
-        return;
-    }
-    
-    // Open modal
-    getStartedButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            console.log('Button clicked');
-            
-            const plan = this.getAttribute('data-plan');
-            const price = this.getAttribute('data-price');
-            
-            if (modalPlanName) modalPlanName.textContent = plan;
-            if (formPlan) formPlan.value = plan;
-            if (formPrice) formPrice.value = price;
-            
-            // Reset form to step 1
-            currentStep = 1;
-            showStep(1);
-            updateProgress();
-            
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            
-            console.log('Modal opened');
+function initModal() {
+    try {
+        const getStartedButtons = document.querySelectorAll('.get-started-btn');
+        const modal = document.getElementById('getStartedModal');
+        const modalClose = document.querySelector('.modal-close');
+        const modalPlanName = document.getElementById('modalPlanName');
+        const formPlan = document.getElementById('formPlan');
+        const formPrice = document.getElementById('formPrice');
+        const getStartedForm = document.getElementById('getStartedForm');
+        
+        console.log('Found buttons:', getStartedButtons.length);
+        console.log('Modal found:', !!modal);
+        
+        // Check if modal exists
+        if (!modal) {
+            console.error('Modal element not found');
+            return;
+        }
+        
+        if (getStartedButtons.length === 0) {
+            console.error('No Get Started buttons found');
+            return;
+        }
+        
+        // Open modal
+        getStartedButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                console.log('Button clicked');
+                
+                const plan = this.getAttribute('data-plan');
+                const price = this.getAttribute('data-price');
+                
+                if (modalPlanName) modalPlanName.textContent = plan;
+                if (formPlan) formPlan.value = plan;
+                if (formPrice) formPrice.value = price;
+                
+                // Reset form to step 1
+                currentStep = 1;
+                showStep(1);
+                updateProgress();
+                
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                
+                console.log('Modal opened');
+            });
         });
-    });
     
     // Close modal
     if (modalClose) {
@@ -417,21 +418,32 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Close modal on Escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
-            closeModal();
-        }
-    });
-    
-    // Form submission
-    if (getStartedForm) {
-        getStartedForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            submitForm();
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
         });
+        
+        // Form submission
+        if (getStartedForm) {
+            getStartedForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                submitForm();
+            });
+        }
+    } catch (error) {
+        console.error('Error initializing modal:', error);
     }
-});
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initModal);
+} else {
+    // DOM is already ready
+    initModal();
+}
 
 
 function nextStep() {
