@@ -148,6 +148,7 @@
                             <label for="resume">Resume/CV *</label>
                             <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
                             <small style="color: #64748b; font-size: 0.875rem;">Accepted formats: PDF, DOC, DOCX (Max 5MB)</small>
+                            <div id="fileError" style="color: #ef4444; font-size: 0.875rem; margin-top: 0.5rem; display: none;"></div>
                         </div>
 
                         <div class="form-group">
@@ -239,9 +240,39 @@
             if (joinForm) {
                 const buttonArea = document.getElementById('buttonArea');
                 const submitButton = document.getElementById('submitButton');
+                const resumeInput = document.getElementById('resume');
+                const fileError = document.getElementById('fileError');
+                
+                // Validate file size before submission
+                if (resumeInput) {
+                    resumeInput.addEventListener('change', function() {
+                        const file = this.files[0];
+                        if (file) {
+                            const maxSize = 5 * 1024 * 1024; // 5MB
+                            if (file.size > maxSize) {
+                                fileError.textContent = 'File size exceeds 5MB. Please choose a smaller file.';
+                                fileError.style.display = 'block';
+                                this.value = '';
+                            } else {
+                                fileError.style.display = 'none';
+                            }
+                        }
+                    });
+                }
                 
                 joinForm.addEventListener('submit', function(e) {
                     e.preventDefault();
+                    
+                    // Validate file size again
+                    const file = resumeInput.files[0];
+                    if (file) {
+                        const maxSize = 5 * 1024 * 1024; // 5MB
+                        if (file.size > maxSize) {
+                            fileError.textContent = 'File size exceeds 5MB. Please choose a smaller file.';
+                            fileError.style.display = 'block';
+                            return;
+                        }
+                    }
                     
                     const formData = new FormData(joinForm);
                     
@@ -250,6 +281,7 @@
                     submitButton.textContent = 'Submitting...';
                     submitButton.style.opacity = '0.7';
                     formMessage.innerHTML = '';
+                    fileError.style.display = 'none';
                     
                     // Submit to Formspree - Don't set Content-Type header for file uploads
                     fetch(joinForm.action, {
